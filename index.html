@@ -1,155 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Player</title>
-  
-  <!-- TEMPATKAN SCRIPT IKLAN POP-UNDER ANDA DI BAWAH INI -->
-  <!-- Contoh: <script type='text/javascript' src='//your-popunder-network.com/script.js'></script> -->
-
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Streaming Video Premium</title>
   <style>
-    /* Reset CSS agar video memenuhi layar */
     body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
+      margin: 0; padding: 0;
+      width: 100%; height: 100%;
       background-color: #000;
-      overflow: hidden; /* Hilangkan scrollbar */
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; justify-content: center; align-items: center;
+      overflow: hidden;
+      font-family: sans-serif;
     }
 
-    #video-container {
-      width: 100vw;
-      height: 100vh;
+    .video-container {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    video {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Agar video tidak terpotong */
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background: #000;
     }
 
-    /* Overlay transparan untuk memaksa klik pertama (trigger iklan) */
+    video {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      display: none;
+      outline: none;
+    }
+
+    video::-internal-media-controls-download-button { display:none; }
+    video::-webkit-media-controls-enclosure { overflow:hidden; }
+    video::-webkit-media-controls-panel { width: calc(100% + 30px); }
+
+    /* Overlay Iklan - Blur dan Background Gelap Dihilangkan */
     #ad-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 100;
       cursor: pointer;
-    }
-
-    /* Loading Spinner */
-    .spinner {
-      position: absolute;
-      border: 4px solid rgba(255, 255, 255, 0.1);
-      border-top: 4px solid #fff;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
-      z-index: 10;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    #error-msg {
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      z-index: 20;
       display: none;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0); /* Dibuat transparan total */
+      backdrop-filter: none; /* Efek blur dihapus */
     }
+
+    .play-button-visual {
+      width: 80px; height: 80px;
+      background: rgba(0, 0, 0, 0.5); /* Tombol sedikit gelap agar kontras dengan video */
+      border-radius: 50%;
+      display: flex; justify-content: center; align-items: center;
+      border: 3px solid #fff;
+      transition: transform 0.2s ease;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    
+    .play-button-visual::after {
+      content: '';
+      border-style: solid;
+      border-width: 15px 0 15px 25px;
+      border-color: transparent transparent transparent white;
+      margin-left: 5px;
+    }
+
+    #error-msg { color: #ff4444; position: absolute; text-align: center; width: 90%; top: 50%; transform: translateY(-50%); }
   </style>
+
+  <!-- IKLAN POP-UNDER ANDA -->
+  <script>(function(s){s.dataset.zone='10569387',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 </head>
 <body>
 
-  <div id="video-container">
-    <div id="loading" class="spinner"></div>
-    <div id="error-msg">Video tidak ditemukan atau error.</div>
-    
-    <!-- Overlay untuk trigger iklan -->
-    <div id="ad-overlay"></div>
+  <div class="video-container">
+    <div id="ad-overlay">
+        <div class="play-button-visual"></div>
+    </div>
 
     <video 
       id="video-player" 
       controls 
-      playsinline
-      controlsList="nodownload"
-      disablePictureInPicture>
-      Your browser does not support the video tag.
+      controlsList="nodownload noplaybackrate" 
+      disablePictureInPicture
+      preload="auto" 
+      playsinline>
     </video>
+    
+    <div id="error-msg"></div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const videoPlayer = document.getElementById('video-player');
-      const loading = document.getElementById('loading');
-      const errorMsg = document.getElementById('error-msg');
-      const adOverlay = document.getElementById('ad-overlay');
+    const JSON_FILE = 'Video.json';
+    const COOLDOWN_AD = 5000; 
+    let lastAdTime = 0;
 
-      // 1. Ambil Video ID dari URL (seperti videy.co/v/ID)
-      let videoId = window.location.pathname.split('/').pop();
+    async function initPlayer() {
+      const player = document.getElementById('video-player');
+      const overlay = document.getElementById('ad-overlay');
+      const errorMsg = document.getElementById('error-msg');
+
+      const path = window.location.search || window.location.pathname;
+      const videoId = path.replace(/[/?]/g, '').replace(/^e/, '');
 
       if (!videoId) {
-        loading.style.display = 'none';
-        errorMsg.textContent = "ID Video Kosong";
-        errorMsg.style.display = 'block';
+        errorMsg.innerText = "ID Video tidak ditemukan.";
         return;
       }
 
       try {
-        // 2. Ambil data dari JSON GitHub
-        const response = await axios.get('https://raw.githubusercontent.com/liwa22/json/refs/heads/main/Video.json');
-        const videos = response.data;
-        const foundVideo = videos.find(v => v.id === videoId);
+        const response = await fetch(JSON_FILE);
+        const data = await response.json();
+        const videoData = data.find(v => v.id === videoId);
 
-        if (foundVideo) {
-          videoPlayer.src = foundVideo.Url;
+        if (videoData && videoData.Url) {
+          player.src = videoData.Url;
           
-          // Hilangkan loading saat video siap
-          videoPlayer.oncanplay = () => {
-            loading.style.display = 'none';
+          player.oncanplay = () => {
+            player.style.display = 'block';
+            showAdOverlay(); 
           };
         } else {
-          throw new Error("Video ID tidak ada di database.");
+          throw new Error("Video tidak ditemukan.");
         }
-      } catch (error) {
-        loading.style.display = 'none';
-        errorMsg.style.display = 'block';
-        console.error(error);
+      } catch (err) {
+        errorMsg.innerText = err.message;
       }
 
-      // 3. Logika Iklan Pop-Under & Play
-      // Saat user klik di mana saja (overlay), iklan muncul & video mulai play
-      adOverlay.addEventListener('click', () => {
-        // Iklan pop-under biasanya otomatis terbuka saat klik ini terjadi 
-        // karena adanya script iklan di header.
-        
-        // Mulai putar video
-        videoPlayer.play();
-        
-        // Hilangkan overlay agar user bisa klik kontrol video (pause, volume, dll)
-        adOverlay.style.display = 'none';
+      function showAdOverlay() {
+        overlay.style.display = 'flex';
+      }
+
+      overlay.addEventListener('click', function() {
+        player.play();
+        overlay.style.display = 'none';
+        lastAdTime = new Date().getTime();
       });
-      
-      // Matikan klik kanan pada video
-      videoPlayer.addEventListener('contextmenu', e => e.preventDefault());
-    });
+
+      player.addEventListener('pause', () => {
+        const currentTime = new Date().getTime();
+        if (currentTime - lastAdTime > COOLDOWN_AD) {
+            showAdOverlay();
+        }
+      });
+    }
+
+    initPlayer();
+    document.addEventListener('contextmenu', e => e.preventDefault());
   </script>
 </body>
 </html>
