@@ -1,156 +1,207 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Streaming Video Premium</title>
-  <style>
-    body, html {
-      margin: 0; padding: 0;
-      width: 100%; height: 100%;
-      background-color: #000;
-      display: flex; justify-content: center; align-items: center;
-      overflow: hidden;
-      font-family: sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Streaming</title>
 
-    .video-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #000;
-    }
+<!-- TEMPEL SCRIPT POPUNDER DI SINI -->
+<!-- <script src="ISI_SCRIPT_MONETAG_DISINI"></script> -->
 
-    video {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      display: none;
-      outline: none;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
-    video::-internal-media-controls-download-button { display:none; }
-    video::-webkit-media-controls-enclosure { overflow:hidden; }
-    video::-webkit-media-controls-panel { width: calc(100% + 30px); }
+body{
+  background:#0f0f0f;
+  color:white;
+}
 
-    /* Overlay Iklan - Blur dan Background Gelap Dihilangkan */
-    #ad-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 100;
-      cursor: pointer;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0, 0, 0, 0); /* Dibuat transparan total */
-      backdrop-filter: none; /* Efek blur dihapus */
-    }
+header{
+  background:#202020;
+  padding:15px 20px;
+  font-size:20px;
+  font-weight:bold;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
 
-    .play-button-visual {
-      width: 80px; height: 80px;
-      background: rgba(0, 0, 0, 0.5); /* Tombol sedikit gelap agar kontras dengan video */
-      border-radius: 50%;
-      display: flex; justify-content: center; align-items: center;
-      border: 3px solid #fff;
-      transition: transform 0.2s ease;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-    
-    .play-button-visual::after {
-      content: '';
-      border-style: solid;
-      border-width: 15px 0 15px 25px;
-      border-color: transparent transparent transparent white;
-      margin-left: 5px;
-    }
+.container{
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:20px;
+}
 
-    #error-msg { color: #ff4444; position: absolute; text-align: center; width: 90%; top: 50%; transform: translateY(-50%); }
-  </style>
+.card{
+  cursor:pointer;
+}
 
-  <!-- IKLAN POP-UNDER ANDA -->
-  <script>(function(s){s.dataset.zone='10569387',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+.thumbnail{
+  width:100%;
+  aspect-ratio:16/9;
+  background:#111;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.thumbnail img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.3s;
+}
+
+.card:hover img{
+  transform:scale(1.05);
+}
+
+.info{
+  display:flex;
+  margin-top:10px;
+}
+
+.avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#444;
+  margin-right:10px;
+}
+
+.title{
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:4px;
+}
+
+.meta{
+  font-size:12px;
+  color:#aaa;
+}
+
+/* MODAL VIDEO */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.video-container{
+  width:100%;
+  max-width:900px;
+}
+
+video{
+  width:100%;
+  height:auto;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:25px;
+  font-size:30px;
+  cursor:pointer;
+  color:white;
+}
+</style>
 </head>
 <body>
 
+<header>🎬 My Streaming</header>
+
+<div class="container" id="videoList"></div>
+
+<div class="modal" id="videoModal">
+  <div class="close" onclick="closeVideo()">✕</div>
   <div class="video-container">
-    <div id="ad-overlay">
-        <div class="play-button-visual"></div>
-    </div>
-
-    <video 
-      id="video-player" 
-      controls 
-      controlsList="nodownload noplaybackrate" 
-      disablePictureInPicture
-      preload="auto" 
-      playsinline>
+    <video id="player" controls autoplay>
+      <source id="videoSource">
     </video>
-    
-    <div id="error-msg"></div>
   </div>
+</div>
 
-  <script>
-    const JSON_FILE = 'Video.json';
-    const COOLDOWN_AD = 5000; 
-    let lastAdTime = 0;
+<script>
 
-    async function initPlayer() {
-      const player = document.getElementById('video-player');
-      const overlay = document.getElementById('ad-overlay');
-      const errorMsg = document.getElementById('error-msg');
+// LOAD JSON
+fetch('videos.json')
+.then(res => res.json())
+.then(data => {
 
-      const path = window.location.search || window.location.pathname;
-      const videoId = path.replace(/[/?]/g, '').replace(/^e/, '');
+  const container = document.getElementById('videoList');
 
-      if (!videoId) {
-        errorMsg.innerText = "ID Video tidak ditemukan.";
-        return;
+  data.forEach(video => {
+
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    card.innerHTML = `
+      <div class="thumbnail">
+        <img data-src="${video.thumbnail}" class="lazy">
+      </div>
+      <div class="info">
+        <div class="avatar"></div>
+        <div>
+          <div class="title">${video.title}</div>
+          <div class="meta">${video.channel} • ${video.views}</div>
+        </div>
+      </div>
+    `;
+
+    card.onclick = () => openVideo(video.video);
+    container.appendChild(card);
+
+  });
+
+  startLazyLoad();
+
+});
+
+// LAZY LOAD SYSTEM
+function startLazyLoad(){
+
+  const lazyImages = document.querySelectorAll('.lazy');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const img = entry.target;
+        img.src = img.dataset.src;
+        obs.unobserve(img);
       }
+    });
+  });
 
-      try {
-        const response = await fetch(JSON_FILE);
-        const data = await response.json();
-        const videoData = data.find(v => v.id === videoId);
+  lazyImages.forEach(img => observer.observe(img));
+}
 
-        if (videoData && videoData.Url) {
-          player.src = videoData.Url;
-          
-          player.oncanplay = () => {
-            player.style.display = 'block';
-            showAdOverlay(); 
-          };
-        } else {
-          throw new Error("Video tidak ditemukan.");
-        }
-      } catch (err) {
-        errorMsg.innerText = err.message;
-      }
+// OPEN VIDEO
+function openVideo(src){
+  document.getElementById("videoSource").src = src;
+  document.getElementById("player").load();
+  document.getElementById("videoModal").style.display="flex";
+}
 
-      function showAdOverlay() {
-        overlay.style.display = 'flex';
-      }
+// CLOSE VIDEO
+function closeVideo(){
+  document.getElementById("videoModal").style.display="none";
+  document.getElementById("player").pause();
+}
 
-      overlay.addEventListener('click', function() {
-        player.play();
-        overlay.style.display = 'none';
-        lastAdTime = new Date().getTime();
-      });
+</script>
 
-      player.addEventListener('pause', () => {
-        const currentTime = new Date().getTime();
-        if (currentTime - lastAdTime > COOLDOWN_AD) {
-            showAdOverlay();
-        }
-      });
-    }
-
-    initPlayer();
-    document.addEventListener('contextmenu', e => e.preventDefault());
-  </script>
 </body>
 </html>
