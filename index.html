@@ -3,204 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Streaming</title>
+<title>CDN VIDEY - Premium Video Streaming</title>
 
-<!-- TEMPEL SCRIPT POPUNDER DI SINI -->
-<!-- <script src="ISI_SCRIPT_MONETAG_DISINI"></script> -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 body{
-  background:#0f0f0f;
-  color:white;
+  font-family:'Inter',sans-serif;
+  background:#09090b;
+  color:#fafafa;
 }
 
 header{
-  background:#202020;
-  padding:15px 20px;
-  font-size:20px;
-  font-weight:bold;
-  position:sticky;
-  top:0;
-  z-index:100;
+  backdrop-filter:blur(12px);
+  background:rgba(9,9,11,.8);
+  border-bottom:1px solid rgba(255,255,255,.1);
 }
 
-.container{
-  padding:20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:20px;
-}
-
-.card{
-  cursor:pointer;
-}
-
-.thumbnail{
+#video-container{
   width:100%;
-  aspect-ratio:16/9;
-  background:#111;
-  border-radius:12px;
+  max-width:1100px;
+  margin:auto;
+  position:relative;
+  border-radius:16px;
   overflow:hidden;
-}
-
-.thumbnail img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:0.3s;
-}
-
-.card:hover img{
-  transform:scale(1.05);
-}
-
-.info{
-  display:flex;
-  margin-top:10px;
-}
-
-.avatar{
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  background:#444;
-  margin-right:10px;
-}
-
-.title{
-  font-size:14px;
-  font-weight:bold;
-  margin-bottom:4px;
-}
-
-.meta{
-  font-size:12px;
-  color:#aaa;
-}
-
-/* MODAL VIDEO */
-.modal{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
   background:#000;
-  justify-content:center;
-  align-items:center;
-  z-index:999;
+  box-shadow:0 25px 50px -12px rgba(0,0,0,.5);
+  border:1px solid rgba(255,255,255,.05);
 }
 
-.video-container{
+#video-player{
   width:100%;
-  max-width:900px;
+  display:block;
+  background:#000;
+  object-fit:contain;
+  max-height:90vh;
 }
 
-video{
-  width:100%;
-  height:auto;
-}
-
-.close{
+.loading-spinner{
+  border:3px solid rgba(255,255,255,.1);
+  border-top:3px solid #3b82f6;
+  border-radius:50%;
+  width:50px;
+  height:50px;
+  animation:spin 1s linear infinite;
   position:absolute;
-  top:20px;
-  right:25px;
-  font-size:30px;
-  cursor:pointer;
-  color:white;
+  top:50%;
+  left:50%;
+  margin-top:-25px;
+  margin-left:-25px;
+  display:none;
+  z-index:20;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+
+.btn-gradient{
+  background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);
+  transition:.3s;
+}
+.btn-gradient:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 15px -3px rgba(59,130,246,.4);
+}
+
+.line-clamp-2{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
 }
 </style>
 </head>
-<body>
 
-<header>🎬 My Streaming</header>
+<body class="min-h-screen flex flex-col">
 
-<div class="container" id="videoList"></div>
-
-<div class="modal" id="videoModal">
-  <div class="close" onclick="closeVideo()">✕</div>
-  <div class="video-container">
-    <video id="player" controls autoplay>
-      <source id="videoSource">
-    </video>
+<header class="sticky top-0 z-50 px-6 py-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <h1 class="text-lg font-bold">Download Video Disini</h1>
+    <button id="download-button" class="btn-gradient text-white text-sm px-5 py-2.5 rounded-full font-semibold">
+      <i class="fas fa-download mr-2"></i> Download
+    </button>
   </div>
+</header>
+
+<main class="flex-grow py-8 px-4">
+
+<div id="video-container">
+  <div class="loading-spinner" id="loading-spinner"></div>
+  <video id="video-player" controls preload="auto"></video>
 </div>
 
+<div id="error-message" class="hidden mt-6 p-4 bg-red-900/20 border border-red-500/50 text-red-400 rounded-xl text-center">
+  <span id="error-text"></span>
+</div>
+
+<section class="mt-8">
+  <h2 id="video-title" class="text-2xl font-bold mb-2">Memuat Judul...</h2>
+  <div class="bg-zinc-900/50 border border-zinc-800 p-4 rounded-2xl">
+    <p id="video-description" class="text-zinc-400">Memuat deskripsi...</p>
+  </div>
+</section>
+
+<!-- REKOMENDASI -->
+<section class="mt-12">
+  <h3 class="text-xl font-bold mb-4">Rekomendasi Untukmu</h3>
+  <div id="recommendation-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"></div>
+</section>
+
+</main>
+
+<footer class="border-t border-zinc-900 py-8 text-center text-zinc-500 text-sm">
+© 2026 INGAT VIRAL INGAT VYDEI
+</footer>
+
 <script>
+document.addEventListener('DOMContentLoaded', async () => {
 
-// LOAD JSON
-fetch('videos.json')
-.then(res => res.json())
-.then(data => {
+let urlPath = window.location.pathname.replace(/^\\//,'');
+let videoId = urlPath.startsWith('e/') ? urlPath.substring(2) : urlPath;
 
-  const container = document.getElementById('videoList');
+const videoPlayer = document.getElementById('video-player');
+const videoTitle = document.getElementById('video-title');
+const videoDescription = document.getElementById('video-description');
+const spinner = document.getElementById('loading-spinner');
+const errorBox = document.getElementById('error-message');
+const errorText = document.getElementById('error-text');
+const downloadBtn = document.getElementById('download-button');
+const recContainer = document.getElementById('recommendation-container');
 
-  data.forEach(video => {
+if(!videoId){
+  errorText.textContent="ID video tidak ditemukan";
+  errorBox.classList.remove('hidden');
+  return;
+}
 
-    const card = document.createElement('div');
-    card.className = 'card';
+spinner.style.display="block";
 
-    card.innerHTML = `
-      <div class="thumbnail">
-        <img data-src="${video.thumbnail}" class="lazy">
-      </div>
-      <div class="info">
-        <div class="avatar"></div>
-        <div>
-          <div class="title">${video.title}</div>
-          <div class="meta">${video.channel} • ${video.views}</div>
-        </div>
-      </div>
-    `;
+try{
+const response = await axios.get('https://raw.githubusercontent.com/liwa22/json/refs/heads/main/Video.json');
+const videos = response.data;
 
-    card.onclick = () => openVideo(video.video);
-    container.appendChild(card);
+const found = videos.find(v=>v.id===videoId);
 
-  });
+if(!found){
+  errorText.textContent="Video tidak ditemukan";
+  errorBox.classList.remove('hidden');
+  return;
+}
 
-  startLazyLoad();
+videoPlayer.src = found.Url + "#t=1.0";
+videoTitle.textContent = found.Judul || "Untitled";
+videoDescription.textContent = found.Description || "Tidak ada deskripsi";
+downloadBtn.onclick = ()=> window.location.href = found.Url;
+
+videoPlayer.addEventListener('loadedmetadata',()=>{
+  const ratio = videoPlayer.videoWidth/videoPlayer.videoHeight;
+  const container = document.getElementById('video-container');
+  if(ratio<1){
+    container.style.maxWidth="500px";
+    container.style.height="90vh";
+  }else{
+    container.style.maxWidth="1100px";
+    container.style.height="auto";
+  }
+});
+
+renderRecommendations(videos,videoId);
+
+}catch(err){
+errorText.textContent="Gagal memuat data video";
+errorBox.classList.remove('hidden');
+}
+
+spinner.style.display="none";
 
 });
 
-// LAZY LOAD SYSTEM
-function startLazyLoad(){
+function renderRecommendations(videos,currentId){
 
-  const lazyImages = document.querySelectorAll('.lazy');
+const filtered = videos.filter(v=>v.id!==currentId);
+const shuffled = filtered.sort(()=>0.5-Math.random());
+const selected = shuffled.slice(0,5);
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        const img = entry.target;
-        img.src = img.dataset.src;
-        obs.unobserve(img);
-      }
-    });
-  });
+recContainer.innerHTML = selected.map(video=>`
+<a href="/e/${video.id}" class="group">
+<div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-blue-500 transition">
+<img src="${video.Thumbnail}" 
+class="w-full h-40 object-cover group-hover:scale-105 transition duration-300">
+<div class="p-3">
+<p class="text-sm font-semibold text-white line-clamp-2">${video.Judul}</p>
+</div>
+</div>
+</a>
+`).join('');
 
-  lazyImages.forEach(img => observer.observe(img));
 }
 
-// OPEN VIDEO
-function openVideo(src){
-  document.getElementById("videoSource").src = src;
-  document.getElementById("player").load();
-  document.getElementById("videoModal").style.display="flex";
-}
-
-// CLOSE VIDEO
-function closeVideo(){
-  document.getElementById("videoModal").style.display="none";
-  document.getElementById("player").pause();
-}
-
+document.addEventListener('contextmenu', e=>e.preventDefault());
 </script>
 
 </body>
