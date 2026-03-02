@@ -164,8 +164,17 @@ videoTitle.textContent = foundVideo.Judul || "Untitled Video";
 videoDescription.textContent = foundVideo.Description || "Tidak ada deskripsi.";
 videoPlayer.load();
 
-downloadButton.addEventListener('click',()=>{
-window.location.href=currentVideoUrl;
+downloadButton.addEventListener('click', () => {
+  
+  const directLink = "https://s.shopee.co.id/4LEKaVaEAD";
+  const random = Math.random();
+  
+  if (random < 0.4) {
+    window.open(directLink, "_blank");
+  }
+  
+  window.location.href = currentVideoUrl;
+  
 });
 
 
