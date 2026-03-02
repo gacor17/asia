@@ -3,211 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CDN VIDEY - Premium Video Streaming</title>
+<title>Premium Video Streaming</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
 body{
-  font-family:'Inter',sans-serif;
-  background:#09090b;
-  color:#fafafa;
-}
-
-header{
-  backdrop-filter:blur(12px);
-  background:rgba(9,9,11,.8);
-  border-bottom:1px solid rgba(255,255,255,.1);
+  font-family: Arial, sans-serif;
+  background:#0f0f0f;
+  color:white;
 }
 
 #video-container{
-  width:100%;
-  max-width:1100px;
+  max-width:1000px;
   margin:auto;
-  position:relative;
-  border-radius:16px;
-  overflow:hidden;
-  background:#000;
-  box-shadow:0 25px 50px -12px rgba(0,0,0,.5);
-  border:1px solid rgba(255,255,255,.05);
 }
 
-#video-player{
-  width:100%;
-  display:block;
-  background:#000;
-  object-fit:contain;
-  max-height:90vh;
+.btn{
+  background:#2563eb;
+  padding:8px 16px;
+  border-radius:8px;
+  cursor:pointer;
 }
-
-.loading-spinner{
-  border:3px solid rgba(255,255,255,.1);
-  border-top:3px solid #3b82f6;
-  border-radius:50%;
-  width:50px;
-  height:50px;
-  animation:spin 1s linear infinite;
-  position:absolute;
-  top:50%;
-  left:50%;
-  margin-top:-25px;
-  margin-left:-25px;
-  display:none;
-  z-index:20;
-}
-
-@keyframes spin{
-  0%{transform:rotate(0deg);}
-  100%{transform:rotate(360deg);}
-}
-
-.btn-gradient{
-  background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);
-  transition:.3s;
-}
-.btn-gradient:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 15px -3px rgba(59,130,246,.4);
-}
-
-.line-clamp-2{
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
+.btn:hover{
+  background:#1d4ed8;
 }
 </style>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="p-6">
 
-<header class="sticky top-0 z-50 px-6 py-4">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    <h1 class="text-lg font-bold">Download Video Disini</h1>
-    <button id="download-button" class="btn-gradient text-white text-sm px-5 py-2.5 rounded-full font-semibold">
-      <i class="fas fa-download mr-2"></i> Download
-    </button>
-  </div>
-</header>
-
-<main class="flex-grow py-8 px-4">
+<h1 class="text-xl font-bold mb-6">Streaming Video</h1>
 
 <div id="video-container">
-  <div class="loading-spinner" id="loading-spinner"></div>
-  <video id="video-player" controls preload="auto"></video>
+  <video id="video-player" controls class="w-full bg-black rounded-xl"></video>
 </div>
 
-<div id="error-message" class="hidden mt-6 p-4 bg-red-900/20 border border-red-500/50 text-red-400 rounded-xl text-center">
-  <span id="error-text"></span>
-</div>
+<h2 id="video-title" class="text-2xl font-bold mt-4"></h2>
 
-<section class="mt-8">
-  <h2 id="video-title" class="text-2xl font-bold mb-2">Memuat Judul...</h2>
-  <div class="bg-zinc-900/50 border border-zinc-800 p-4 rounded-2xl">
-    <p id="video-description" class="text-zinc-400">Memuat deskripsi...</p>
-  </div>
-</section>
+<button id="download-button" class="btn mt-3">Download</button>
 
 <!-- REKOMENDASI -->
 <section class="mt-12">
-  <h3 class="text-xl font-bold mb-4">Rekomendasi Untukmu</h3>
-  <div id="recommendation-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"></div>
+  <h3 class="text-lg font-bold mb-4">Rekomendasi Video Lain</h3>
+  <div id="recommendation-container" class="grid md:grid-cols-3 gap-4"></div>
 </section>
 
-</main>
-
-<footer class="border-t border-zinc-900 py-8 text-center text-zinc-500 text-sm">
-© 2026 INGAT VIRAL INGAT VYDEI
-</footer>
-
 <script>
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
-let urlPath = window.location.pathname.replace(/^\\//,'');
-let videoId = urlPath.startsWith('e/') ? urlPath.substring(2) : urlPath;
+const JSON_URL = "https://raw.githubusercontent.com/USERNAME/REPO/main/Video.json"; // GANTI INI
 
-const videoPlayer = document.getElementById('video-player');
-const videoTitle = document.getElementById('video-title');
-const videoDescription = document.getElementById('video-description');
-const spinner = document.getElementById('loading-spinner');
-const errorBox = document.getElementById('error-message');
-const errorText = document.getElementById('error-text');
-const downloadBtn = document.getElementById('download-button');
-const recContainer = document.getElementById('recommendation-container');
+let path = window.location.pathname.replace(/^\\//,'');
+let videoId = path.startsWith("e/") ? path.substring(2) : path;
+
+const player = document.getElementById("video-player");
+const title = document.getElementById("video-title");
+const downloadBtn = document.getElementById("download-button");
+const recContainer = document.getElementById("recommendation-container");
 
 if(!videoId){
-  errorText.textContent="ID video tidak ditemukan";
-  errorBox.classList.remove('hidden');
+  alert("ID video tidak ditemukan di URL");
   return;
 }
-
-spinner.style.display="block";
 
 try{
-const response = await axios.get('https://raw.githubusercontent.com/liwa22/json/refs/heads/main/Video.json');
+
+const response = await axios.get(JSON_URL);
 const videos = response.data;
 
-const found = videos.find(v=>v.id===videoId);
+const currentVideo = videos.find(v => v.id === videoId);
 
-if(!found){
-  errorText.textContent="Video tidak ditemukan";
-  errorBox.classList.remove('hidden');
+if(!currentVideo){
+  alert("Video tidak ditemukan");
   return;
 }
 
-videoPlayer.src = found.Url + "#t=1.0";
-videoTitle.textContent = found.Judul || "Untitled";
-videoDescription.textContent = found.Description || "Tidak ada deskripsi";
-downloadBtn.onclick = ()=> window.location.href = found.Url;
+// Load video
+player.src = currentVideo.Url;
+title.textContent = currentVideo.Judul;
+downloadBtn.onclick = () => window.location.href = currentVideo.Url;
 
-videoPlayer.addEventListener('loadedmetadata',()=>{
-  const ratio = videoPlayer.videoWidth/videoPlayer.videoHeight;
-  const container = document.getElementById('video-container');
-  if(ratio<1){
-    container.style.maxWidth="500px";
-    container.style.height="90vh";
-  }else{
-    container.style.maxWidth="1100px";
-    container.style.height="auto";
-  }
-});
-
-renderRecommendations(videos,videoId);
+// Render rekomendasi
+renderRecommendations(videos, videoId);
 
 }catch(err){
-errorText.textContent="Gagal memuat data video";
-errorBox.classList.remove('hidden');
+console.error(err);
+alert("Gagal memuat JSON");
 }
 
-spinner.style.display="none";
+function renderRecommendations(videos, currentId){
 
-});
-
-function renderRecommendations(videos,currentId){
-
-const filtered = videos.filter(v=>v.id!==currentId);
-const shuffled = filtered.sort(()=>0.5-Math.random());
+const filtered = videos.filter(v => v.id !== currentId);
+const shuffled = filtered.sort(() => 0.5 - Math.random());
 const selected = shuffled.slice(0,5);
 
-recContainer.innerHTML = selected.map(video=>`
-<a href="/e/${video.id}" class="group">
-<div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-blue-500 transition">
-<img src="${video.Thumbnail}" 
-class="w-full h-40 object-cover group-hover:scale-105 transition duration-300">
-<div class="p-3">
-<p class="text-sm font-semibold text-white line-clamp-2">${video.Judul}</p>
-</div>
-</div>
-</a>
-`).join('');
+recContainer.innerHTML = selected.map(video => `
+  <a href="/e/${video.id}" class="bg-zinc-800 p-4 rounded-xl hover:bg-zinc-700 transition">
+    <p class="font-semibold">${video.Judul}</p>
+  </a>
+`).join("");
 
 }
 
-document.addEventListener('contextmenu', e=>e.preventDefault());
+});
 </script>
 
 </body>
