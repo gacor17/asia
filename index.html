@@ -3,65 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Video Streaming</title>
+<title>Video Streaming</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <style>
 body{
-  font-family: Arial, sans-serif;
-  background:#0f0f0f;
+  background:#111;
   color:white;
+  font-family:Arial, sans-serif;
 }
-
-#video-container{
-  max-width:1000px;
+.video-wrapper{
+  max-width:900px;
   margin:auto;
 }
-
-.btn{
-  background:#2563eb;
-  padding:8px 16px;
-  border-radius:8px;
-  cursor:pointer;
+.card{
+  background:#1f1f1f;
+  padding:12px;
+  border-radius:10px;
 }
-.btn:hover{
-  background:#1d4ed8;
+.card:hover{
+  background:#2a2a2a;
 }
 </style>
 </head>
-
 <body class="p-6">
 
-<h1 class="text-xl font-bold mb-6">Streaming Video</h1>
+<h1 class="text-2xl font-bold mb-6">Streaming Video</h1>
 
-<div id="video-container">
-  <video id="video-player" controls class="w-full bg-black rounded-xl"></video>
+<div class="video-wrapper">
+  <video id="player" controls class="w-full rounded-xl bg-black"></video>
+  <h2 id="video-title" class="text-xl font-bold mt-4"></h2>
+  <button id="download" class="mt-3 bg-blue-600 px-4 py-2 rounded">Download</button>
 </div>
 
-<h2 id="video-title" class="text-2xl font-bold mt-4"></h2>
-
-<button id="download-button" class="btn mt-3">Download</button>
-
-<!-- REKOMENDASI -->
-<section class="mt-12">
-  <h3 class="text-lg font-bold mb-4">Rekomendasi Video Lain</h3>
-  <div id="recommendation-container" class="grid md:grid-cols-3 gap-4"></div>
+<section class="mt-10">
+  <h3 class="text-lg font-bold mb-4">Rekomendasi</h3>
+  <div id="rekomendasi" class="grid md:grid-cols-3 gap-4"></div>
 </section>
 
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
 
-const JSON_URL = "https://raw.githubusercontent.com/USERNAME/REPO/main/Video.json"; // GANTI INI
+const JSON_URL = "https://raw.githubusercontent.com/USERNAME/REPO/main/Video.json"; // GANTI
 
-let path = window.location.pathname.replace(/^\\//,'');
-let videoId = path.startsWith("e/") ? path.substring(2) : path;
+// ==========================
+// AMBIL ID DARI SEMUA FORMAT URL
+// ==========================
 
-const player = document.getElementById("video-player");
-const title = document.getElementById("video-title");
-const downloadBtn = document.getElementById("download-button");
-const recContainer = document.getElementById("recommendation-container");
+function getVideoId(){
+  const params = new URLSearchParams(window.location.search);
+
+  if(params.get("e")) return params.get("e");
+  if(params.get("id")) return params.get("id");
+
+  let path = window.location.pathname.replace(/^\\//,'');
+
+  if(path.startsWith("e/")) return path.substring(2);
+  if(path) return path;
+
+  return null;
+}
+
+const videoId = getVideoId();
 
 if(!videoId){
   alert("ID video tidak ditemukan di URL");
@@ -70,38 +75,47 @@ if(!videoId){
 
 try{
 
-const response = await axios.get(JSON_URL);
-const videos = response.data;
+const res = await axios.get(JSON_URL);
+const videos = res.data;
 
-const currentVideo = videos.find(v => v.id === videoId);
-
-if(!currentVideo){
-  alert("Video tidak ditemukan");
+if(!Array.isArray(videos)){
+  alert("Format JSON salah, harus array []");
   return;
 }
 
-// Load video
-player.src = currentVideo.Url;
-title.textContent = currentVideo.Judul;
-downloadBtn.onclick = () => window.location.href = currentVideo.Url;
+const current = videos.find(v => v.id == videoId);
 
-// Render rekomendasi
-renderRecommendations(videos, videoId);
+if(!current){
+  alert("Video tidak ditemukan di JSON");
+  return;
+}
+
+const player = document.getElementById("player");
+const title = document.getElementById("video-title");
+const download = document.getElementById("download");
+
+player.src = current.Url;
+title.textContent = current.Judul;
+download.onclick = ()=> window.location.href = current.Url;
+
+renderRekomendasi(videos, videoId);
 
 }catch(err){
 console.error(err);
 alert("Gagal memuat JSON");
 }
 
-function renderRecommendations(videos, currentId){
+function renderRekomendasi(videos,currentId){
 
-const filtered = videos.filter(v => v.id !== currentId);
-const shuffled = filtered.sort(() => 0.5 - Math.random());
-const selected = shuffled.slice(0,5);
+const list = videos
+  .filter(v=>v.id!=currentId)
+  .sort(()=>0.5-Math.random())
+  .slice(0,5);
 
-recContainer.innerHTML = selected.map(video => `
-  <a href="/e/${video.id}" class="bg-zinc-800 p-4 rounded-xl hover:bg-zinc-700 transition">
-    <p class="font-semibold">${video.Judul}</p>
+document.getElementById("rekomendasi").innerHTML =
+list.map(v=>`
+  <a href="?e=${v.id}" class="card block">
+    ${v.Judul}
   </a>
 `).join("");
 
