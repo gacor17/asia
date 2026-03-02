@@ -176,7 +176,7 @@ window.location.href=currentVideoUrl;
 const shuffled = videos
 .filter(v=>v.id!==videoId)
 .sort(()=>0.5-Math.random())
-.slice(0,5);
+.slice(0,10);
 
 shuffled.forEach(video=>{
 
@@ -184,8 +184,8 @@ const card = document.createElement('a');
 card.href='/' + video.id;
 card.className="recommend-card bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden";
 
-card.innerHTML=`
-<div class="aspect-video bg-black">
+card.innerHTML = `
+<div class="aspect-[9/16] bg-black max-h-[400px] overflow-hidden">
 <video src="${video.Url}#t=2.0" muted class="w-full h-full object-cover"></video>
 </div>
 <div class="p-3">
