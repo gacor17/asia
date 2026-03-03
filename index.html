@@ -4,22 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>VIIDEY STREAMING</title>
+<!-- SEO & TWITTER CARD META TAGS -->
+<title>VIIDEY STREAMING - Video Viral Terbaru</title>
+<meta name="description" content="Nonton video viral terbaru dan terlengkap hanya di VIIDEY STREAMING.">
 
-<!-- ============================= -->
-<!-- TWITTER & OPEN GRAPH META -->
-<!-- ============================= -->
-
+<!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="VIIDEY Streaming">
-<meta name="twitter:description" content="Watch full video only on VIIDEY">
-<meta name="twitter:image" content="20260303_021117.webp">
+<meta name="twitter:site" content="@viidey_streaming">
+<meta name="twitter:title" id="meta-twitter-title" content="VIIDEY STREAMING - Ingat Viral Ingat VIIDEY">
+<meta name="twitter:description" id="meta-twitter-desc" content="Tonton koleksi video viral terbaru hari ini. Klik untuk memutar langsung.">
+<meta name="twitter:image" id="meta-twitter-image" content="https://viidey.com/20260303_021117.webp"> <!-- Pastikan URL gambar absolut -->
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="VIIDEY Streaming">
-<meta property="og:description" content="Watch full video only on VIIDEY">
-<meta property="og:image" content="20260303_021117.webp">
-<meta property="og:url" content="">
+<!-- Open Graph data (Facebook, WhatsApp, Telegram) -->
+<meta property="og:title" id="meta-og-title" content="VIIDEY STREAMING - Ingat Viral Ingat VIIDEY" />
+<meta property="og:type" content="video.other" />
+<meta property="og:url" content="https://viidey.com/" />
+<meta property="og:image" id="meta-og-image" content="https://viidey.com/20260303_021117.webp" />
+<meta property="og:description" id="meta-og-desc" content="Tonton koleksi video viral terbaru hari ini. Klik untuk memutar langsung." />
+<meta property="og:site_name" content="VIIDEY" />
+
+<script type="text/javascript">
+(function (l) {
+if (l.hash && l.hash.startsWith('#/')) {
+const newPath = l.hash.replace('#', '');
+window.location.replace(newPath);
+}
+if (l.search[1] === "/") {
+var decoded = l.search.slice(1).split("&").map(function (s) {
+return s.replace(/~and~/g, "&");
+}).join("?");
+window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+}
+})(window.location);
+</script>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -82,7 +99,7 @@ transition:.3s;
 
 <header class="sticky top-0 z-50 px-6 py-4 bg-zinc-900 border-b border-zinc-800">
 <div class="max-w-7xl mx-auto flex justify-between items-center">
-<img src="20260303_021117.webp" width="120" height="40">
+<img src="20260303_021117.webp" width="120" height="40" alt="VIIDEY LOGO" loading="eager">
 <button id="download-button" class="btn-gradient text-white text-sm px-5 py-2.5 rounded-full font-semibold">
 <i class="fas fa-download mr-2"></i>Download
 </button>
@@ -107,6 +124,7 @@ transition:.3s;
 </div>
 </section>
 
+<!-- REKOMENDASI -->
 <section class="mt-12">
 <h3 class="text-xl font-bold mb-6">Rekomendasi Video</h3>
 <div id="recommendation-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"></div>
@@ -119,15 +137,15 @@ transition:.3s;
 </footer>
 
 <script>
-function updateMeta(property, content){
-let el = document.querySelector(`meta[name='${property}'], meta[property='${property}']`);
-if(el) el.setAttribute("content", content);
-}
-
 document.addEventListener('DOMContentLoaded', async () => {
 
-let urlPath = window.location.pathname.replace(/^\\//,'');
-let videoId = urlPath.startsWith('e/') ? urlPath.substring(2) : urlPath;
+let urlPath = window.location.pathname;
+let videoId = '';
+let currentVideoUrl = '';
+
+if(urlPath.startsWith('/')) urlPath = urlPath.substring(1);
+if(urlPath.startsWith('e/')) videoId = urlPath.substring(2);
+else videoId = urlPath;
 
 const videoPlayer = document.getElementById('video-player');
 const videoTitle = document.getElementById('video-title');
@@ -147,66 +165,53 @@ return;
 loadingSpinner.style.display='block';
 
 try{
-
 const response = await axios.get('https://raw.githubusercontent.com/liwa22/json/refs/heads/main/Video.json',{timeout:10000});
 const videos = response.data;
 const foundVideo = videos.find(v=>v.id===videoId);
 
 if(foundVideo){
-
+currentVideoUrl = foundVideo.Url;
 videoPlayer.src = foundVideo.Url + "#t=1.0";
 videoTitle.textContent = foundVideo.Judul || "Untitled Video";
 videoDescription.textContent = foundVideo.Description || "Tidak ada deskripsi.";
 videoPlayer.load();
 
-// =========================
-// UPDATE META DINAMIS
-// =========================
-
-document.title = foundVideo.Judul || "VIIDEY Streaming";
-
-updateMeta("twitter:title", foundVideo.Judul);
-updateMeta("twitter:description", foundVideo.Description || "Watch full video only on VIIDEY");
-updateMeta("og:title", foundVideo.Judul);
-updateMeta("og:description", foundVideo.Description || "Watch full video only on VIIDEY");
-
-if(foundVideo.Thumbnail){
-updateMeta("twitter:image", foundVideo.Thumbnail);
-updateMeta("og:image", foundVideo.Thumbnail);
-}
-
-updateMeta("og:url", window.location.href);
-
-// =========================
-// DOWNLOAD BUTTON
-// =========================
+// Update Meta Tags Dinamis untuk Browser/App sharing
+const dynamicTitle = "VIIDEY - " + (foundVideo.Judul || "Video Viral");
+const dynamicDesc = foundVideo.Description || "Tonton video viral terbaru di VIIDEY.";
+document.title = dynamicTitle;
+document.querySelector('meta[name="twitter:title"]').setAttribute('content', dynamicTitle);
+document.querySelector('meta[name="twitter:description"]').setAttribute('content', dynamicDesc);
+document.querySelector('meta[property="og:title"]').setAttribute('content', dynamicTitle);
+document.querySelector('meta[property="og:description"]').setAttribute('content', dynamicDesc);
 
 downloadButton.addEventListener('click', () => {
-window.location.href = foundVideo.Url;
+  const directLink = "https://s.shopee.co.id/4LEKaVaEAD";
+  const random = Math.random();
+  if (random < 0.9) {
+    window.open(directLink, "_blank");
+  }
+  window.location.href = currentVideoUrl;
 });
 
-// =========================
 // REKOMENDASI
-// =========================
-
-videos
+const shuffled = videos
 .filter(v=>v.id!==videoId)
 .sort(()=>0.5-Math.random())
-.slice(0,10)
-.forEach(video=>{
+.slice(0,10);
+
+shuffled.forEach(video=>{
 const card = document.createElement('a');
 card.href='/' + video.id;
 card.className="recommend-card bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden";
-
 card.innerHTML = `
-<div class="aspect-[9/16] bg-black overflow-hidden">
-<img src="${video.Thumbnail || '20260303_021117.webp'}" class="w-full h-full object-cover">
+<div class="aspect-[9/16] bg-black max-h-[400px] overflow-hidden">
+<video src="${video.Url}#t=2.0" muted class="w-full h-full object-cover"></video>
 </div>
 <div class="p-3">
 <p class="text-sm font-semibold text-white line-clamp-2">${video.Judul || 'Untitled Video'}</p>
 </div>
 `;
-
 recommendationList.appendChild(card);
 });
 
@@ -214,14 +219,12 @@ recommendationList.appendChild(card);
 errorText.textContent='Video tidak ditemukan.';
 errorMessage.classList.remove('hidden');
 }
-
 }catch(error){
 errorText.textContent='Gagal memuat data video.';
 errorMessage.classList.remove('hidden');
 }finally{
 loadingSpinner.style.display='none';
 }
-
 });
 
 document.addEventListener('contextmenu',e=>e.preventDefault());
