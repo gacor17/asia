@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(
+        135deg,
+        #6a11cb,
+        #2575fc,
+        #00c6ff
+    );
+}
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:260px;
+    height:100%;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(20px);
+    padding:25px;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    background:rgba(255,255,255,.2);
+}
+
+.main{
+    margin-left:280px;
+    padding:30px;
+}
+
+.header{
+    background:white;
+    border-radius:25px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.header h1{
+    color:#333;
+}
+
+.user{
+    color:#666;
+    margin-top:8px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    color:white;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.card i{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.card h2{
+    font-size:30px;
+}
+
+.card1{
+    background:linear-gradient(
+        135deg,
+        #ff6b6b,
+        #ff9f43
+    );
+}
+
+.card2{
+    background:linear-gradient(
+        135deg,
+        #5f27cd,
+        #341f97
+    );
+}
+
+.card3{
+    background:linear-gradient(
+        135deg,
+        #00d2d3,
+        #01a3a4
+    );
+}
+
+.card4{
+    background:linear-gradient(
+        135deg,
+        #54a0ff,
+        #2e86de
+    );
+}
+
+.welcome{
+    margin-top:25px;
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.logout{
+    margin-top:20px;
+    border:none;
+    padding:12px 25px;
+    border-radius:12px;
+    background:#ff4757;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.logout:hover{
+    opacity:.9;
+}
+
+@media(max-width:768px){
+
+.sidebar{
+    width:100%;
+    height:auto;
+    position:relative;
+}
+
+.main{
+    margin-left:0;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        🚀 MyPanel
+    </div>
+
+    <div class="menu">
+
+        <a href="#">
+            <i class="fas fa-home"></i>
+            Dashboard
+        </a>
+
+        <a href="#">
+            <i class="fas fa-user"></i>
+            Profile
+        </a>
+
+        <a href="#">
+            <i class="fas fa-chart-line"></i>
+            Statistik
+        </a>
+
+        <a href="#">
+            <i class="fas fa-cog"></i>
+            Pengaturan
+        </a>
+
+    </div>
+
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h1>Selamat Datang 👋</h1>
+
+        <div class="user" id="userEmail">
+            Loading...
+        </div>
+    </div>
+
+    <div class="cards">
+
+        <div class="card card1">
+            <i class="fas fa-users"></i>
+            <h2>125</h2>
+            <p>Total Pengguna</p>
+        </div>
+
+        <div class="card card2">
+            <i class="fas fa-eye"></i>
+            <h2>5.2K</h2>
+            <p>Total Kunjungan</p>
+        </div>
+
+        <div class="card card3">
+            <i class="fas fa-comments"></i>
+            <h2>450</h2>
+            <p>Pesan</p>
+        </div>
+
+        <div class="card card4">
+            <i class="fas fa-star"></i>
+            <h2>4.9</h2>
+            <p>Rating</p>
+        </div>
+
+    </div>
+
+    <div class="welcome">
+
+        <h2>Dashboard Utama</h2>
+
+        <p style="margin-top:10px;color:#666;">
+            Anda berhasil login ke sistem.
+            Semua fitur website dapat diakses dari halaman ini.
+        </p>
+
+        <button class="logout" onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+if(localStorage.getItem("isLogin") !== "true"){
+    window.location.href="index.html";
+}
+
+const user =
+localStorage.getItem("currentUser") || "Pengguna";
+
+document.getElementById("userEmail").innerHTML =
+"Login sebagai <b>" + user + "</b>";
+
+function logout(){
+
+    localStorage.removeItem("isLogin");
+    localStorage.removeItem("currentUser");
+
+    window.location.href="index.html";
+}
+
+</script>
+
+</body>
+</html>
