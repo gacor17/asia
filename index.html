@@ -170,112 +170,197 @@ Buat Akun
 </div>
 
 <script>
+// ==========================================
+// KONFIGURASI GITHUB API
+// ==========================================
+const GITHUB_TOKEN = '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';
+const REPO_OWNER = 'gacor17'; 
+const REPO_NAME = 'asia';
+const FILE_PATH = 'user.json'; // Path file di dalam repo
 
-const loginTab=document.getElementById("loginTab");
-const signupTab=document.getElementById("signupTab");
+let fileSha = null; // Diperlukan oleh GitHub API untuk meng-update file
 
-const loginForm=document.getElementById("loginForm");
-const signupForm=document.getElementById("signupForm");
+// Elemen UI
+const loginTab = document.getElementById("loginTab");
+const signupTab = document.getElementById("signupTab");
+const loginForm = document.getElementById("loginForm");
+const signupForm = document.getElementById("signupForm");
 
-loginTab.onclick=function(){
-
-loginForm.classList.add("active-form");
-signupForm.classList.remove("active-form");
-
-loginTab.className="active";
-signupTab.className="not-active";
-
+// Tab Switching
+loginTab.onclick = function() {
+    loginForm.classList.add("active-form");
+    signupForm.classList.remove("active-form");
+    loginTab.className = "active";
+    signupTab.className = "not-active";
 }
 
-signupTab.onclick=function(){
-
-signupForm.classList.add("active-form");
-loginForm.classList.remove("active-form");
-
-signupTab.className="active";
-loginTab.className="not-active";
-
+signupTab.onclick = function() {
+    signupForm.classList.add("active-form");
+    loginForm.classList.remove("active-form");
+    signupTab.className = "active";
+    loginTab.className = "not-active";
 }
 
-function signup(){
+// ==========================================
+// FUNGSI GITHUB API
+// ==========================================
 
-const email=document.getElementById("signupEmail").value.trim();
-const password=document.getElementById("signupPassword").value;
+// Fungsi mengambil data dari GitHub
+async function fetchUsersFromGithub() {
+    try {
+        const response = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+            headers: {
+                'Authorization': `Bearer ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
 
-if(!email || !password){
+        if (response.status === 404) {
+            return []; // Jika file user.json belum ada di repo
+        }
 
-alert("Lengkapi data");
-return;
+        if (!response.ok) throw new Error('Gagal mengambil data dari GitHub');
 
+        const data = await response.json();
+        fileSha = data.sha; // Simpan SHA untuk update file nanti
+
+        // GitHub mengembalikan konten dalam format Base64, kita harus decode
+        const decodedContent = decodeURIComponent(escape(atob(data.content)));
+        return JSON.parse(decodedContent);
+
+    } catch (error) {
+        console.error(error);
+        return []; // Kembalikan array kosong jika gagal
+    }
 }
 
-let users=
-JSON.parse(localStorage.getItem("users")) || [];
+// Fungsi menyimpan data ke GitHub
+async function saveUsersToGithub(usersArray) {
+    try {
+        const contentStr = JSON.stringify(usersArray, null, 2);
+        // Encode ke Base64 (mendukung karakter UTF-8)
+        const encodedContent = btoa(unescape(encodeURIComponent(contentStr)));
 
-let cek=
-users.find(u=>u.email===email);
+        const body = {
+            message: 'Update user.json via web login system',
+            content: encodedContent
+        };
 
-if(cek){
+        // Jika file sudah ada, GitHub API mewajibkan kita menyertakan SHA file yang lama
+        if (fileSha) {
+            body.sha = fileSha;
+        }
 
-alert("Email sudah terdaftar");
-return;
+        const response = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3+json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
 
+        if (!response.ok) throw new Error('Gagal menyimpan data ke GitHub');
+        
+        const data = await response.json();
+        fileSha = data.content.sha; // Update SHA dengan yang terbaru
+        return true;
+
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
 }
 
-users.push({
-email:email,
-password:password
-});
+// ==========================================
+// FUNGSI LOGIN & SIGNUP
+// ==========================================
 
-localStorage.setItem(
-"users",
-JSON.stringify(users)
-);
+async function signup() {
+    const email = document.getElementById("signupEmail").value.trim();
+    const password = document.getElementById("signupPassword").value;
+    const btn = document.querySelector("#signupForm .submit-btn");
 
-alert("Akun berhasil dibuat");
+    if(!email || !password){
+        alert("Lengkapi data");
+        return;
+    }
 
-signupForm.classList.remove("active-form");
-loginForm.classList.add("active-form");
+    // Ubah teks tombol jadi loading
+    btn.innerText = "Memproses...";
+    btn.disabled = true;
 
+    // Ambil data terbaru dari GitHub
+    let users = await fetchUsersFromGithub();
+    let cek = users.find(u => u.email === email);
+
+    if(cek){
+        alert("Email sudah terdaftar");
+        btn.innerText = "Buat Akun";
+        btn.disabled = false;
+        return;
+    }
+
+    users.push({
+        email: email,
+        password: password
+    });
+
+    // Simpan kembali ke GitHub
+    const success = await saveUsersToGithub(users);
+
+    if (success) {
+        alert("Akun berhasil dibuat dan disimpan di GitHub!");
+        signupForm.classList.remove("active-form");
+        loginForm.classList.add("active-form");
+        
+        signupTab.className = "not-active";
+        loginTab.className = "active";
+    } else {
+        alert("Gagal menyimpan data ke repositori.");
+    }
+
+    btn.innerText = "Buat Akun";
+    btn.disabled = false;
 }
 
-function login(){
+async function login() {
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+    const btn = document.querySelector("#loginForm .submit-btn");
 
-const email=document.getElementById("loginEmail").value.trim();
-const password=document.getElementById("loginPassword").value;
+    if(!email || !password){
+        alert("Masukkan email dan password");
+        return;
+    }
 
-let users=
-JSON.parse(localStorage.getItem("users")) || [];
+    // Ubah teks tombol jadi loading
+    btn.innerText = "Mengecek data...";
+    btn.disabled = true;
 
-let user=
-users.find(
-u=>u.email===email &&
-u.password===password
-);
+    // Ambil data langsung dari GitHub untuk divalidasi
+    let users = await fetchUsersFromGithub();
+    
+    let user = users.find(
+        u => u.email === email && 
+        u.password === password
+    );
 
-if(user){
+    if(user){
+        // Untuk sesi aktif, kita tetap pakai localStorage
+        localStorage.setItem("isLogin", "true");
+        localStorage.setItem("currentUser", email);
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Email atau password salah");
+    }
 
-localStorage.setItem(
-"isLogin",
-"true"
-);
-
-localStorage.setItem(
-"currentUser",
-email
-);
-
-window.location.href="dashboard.html";
-
-}else{
-
-alert("Email atau password salah");
-
+    btn.innerText = "Login";
+    btn.disabled = false;
 }
-
-}
-
 </script>
+
 
 </body>
 </html>
