@@ -2,191 +2,130 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login & Sign Up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Login System</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(
-        135deg,
-        #6a11cb,
-        #2575fc,
-        #00c6ff
-    );
-    padding:20px;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(
+135deg,
+#0f0f0f,
+#171717,
+#1f1f1f
+);
 }
 
 .container{
-    width:400px;
-    max-width:100%;
+width:400px;
+background:#111111;
+border-radius:20px;
+padding:30px;
+box-shadow:
+0 0 40px rgba(255,193,7,.15),
+0 15px 40px rgba(0,0,0,.5);
+border:1px solid rgba(255,193,7,.15);
 }
 
-.card{
-    background:white;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
-}
-
-.header{
-    padding:35px 20px;
-    text-align:center;
-    color:white;
-    background:linear-gradient(
-        135deg,
-        #ff6b6b,
-        #ff9f43,
-        #feca57
-    );
-}
-
-.header i{
-    font-size:55px;
-    margin-bottom:10px;
-}
-
-.header h1{
-    font-size:28px;
+.title{
+text-align:center;
+margin-bottom:20px;
+font-size:28px;
+font-weight:bold;
+color:#ffc107;
 }
 
 .tabs{
-    display:flex;
+display:flex;
+margin-bottom:20px;
 }
 
-.tab{
-    flex:1;
-    padding:15px;
-    border:none;
-    cursor:pointer;
-    font-weight:600;
-    background:#f5f5f5;
-    transition:.3s;
+.tabs button{
+flex:1;
+padding:12px;
+border:none;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+transition:.3s;
 }
 
-.tab.active{
-    background:white;
-    color:#2575fc;
+.active{
+background:#ffc107;
+color:#000;
+}
+
+.not-active{
+background:#1b1b1b;
+color:#999;
 }
 
 .form{
-    display:none;
-    padding:30px;
+display:none;
 }
 
-.form.active{
-    display:block;
+.form.active-form{
+display:block;
 }
 
-.input-group{
-    position:relative;
-    margin-bottom:18px;
+input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border:1px solid #333;
+border-radius:12px;
+background:#181818;
+color:white;
+outline:none;
+transition:.3s;
 }
 
-.input-group i{
-    position:absolute;
-    left:15px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#888;
+input:focus{
+border-color:#ffc107;
+box-shadow:
+0 0 15px rgba(255,193,7,.3);
 }
 
-.input-group input{
-    width:100%;
-    padding:14px 14px 14px 45px;
-    border:2px solid #eee;
-    border-radius:12px;
-    outline:none;
-    transition:.3s;
+input::placeholder{
+color:#777;
 }
 
-.input-group input:focus{
-    border-color:#2575fc;
+.submit-btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:
+linear-gradient(
+135deg,
+#ffc107,
+#ffb300
+);
+color:#000;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+transition:.3s;
 }
 
-.btn{
-    width:100%;
-    border:none;
-    padding:14px;
-    border-radius:12px;
-    color:white;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.login-btn{
-    background:linear-gradient(
-        135deg,
-        #2575fc,
-        #00c6ff
-    );
-}
-
-.signup-btn{
-    background:linear-gradient(
-        135deg,
-        #ff6b6b,
-        #ff9f43
-    );
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-.social{
-    margin-top:20px;
-    text-align:center;
-}
-
-.social p{
-    margin-bottom:15px;
-    color:#888;
-}
-
-.icons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-}
-
-.icons a{
-    width:45px;
-    height:45px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    text-decoration:none;
-    color:white;
-    font-size:18px;
-}
-
-.google{
-    background:#ea4335;
-}
-
-.facebook{
-    background:#1877f2;
-}
-
-.github{
-    background:#333;
+.submit-btn:hover{
+transform:translateY(-2px);
+box-shadow:
+0 8px 20px rgba(255,193,7,.35);
 }
 
 </style>
@@ -195,84 +134,36 @@ body{
 
 <div class="container">
 
-<div class="card">
-
-<div class="header">
-    <i class="fa-solid fa-user-shield"></i>
-    <h1>Welcome</h1>
-    <p>Login atau Buat Akun Baru</p>
+<div class="title">
+🔐 Login System
 </div>
 
 <div class="tabs">
-    <button class="tab active" onclick="showForm('login')">
-        Login
-    </button>
-
-    <button class="tab" onclick="showForm('signup')">
-        Sign Up
-    </button>
+<button id="loginTab" class="active">Login</button>
+<button id="signupTab" class="not-active">Sign Up</button>
 </div>
 
-<form id="login" class="form active">
+<div id="loginForm" class="form active-form">
 
-    <div class="input-group">
-        <i class="fa-solid fa-envelope"></i>
-        <input type="email" placeholder="Email">
-    </div>
+<input type="email" id="loginEmail" placeholder="Email">
 
-    <div class="input-group">
-        <i class="fa-solid fa-lock"></i>
-        <input type="password" placeholder="Password">
-    </div>
+<input type="password" id="loginPassword" placeholder="Password">
 
-    <button class="btn login-btn">
-        <i class="fa-solid fa-right-to-bracket"></i>
-        Login
-    </button>
+<button class="submit-btn" onclick="login()">
+Login
+</button>
 
-</form>
-
-<form id="signup" class="form">
-
-    <div class="input-group">
-        <i class="fa-solid fa-user"></i>
-        <input type="text" placeholder="Nama Lengkap">
-    </div>
-
-    <div class="input-group">
-        <i class="fa-solid fa-envelope"></i>
-        <input type="email" placeholder="Email">
-    </div>
-
-    <div class="input-group">
-        <i class="fa-solid fa-lock"></i>
-        <input type="password" placeholder="Password">
-    </div>
-
-    <button class="btn signup-btn">
-        <i class="fa-solid fa-user-plus"></i>
-        Buat Akun
-    </button>
-
-</form>
-
-<div class="social">
-    <p>Atau lanjutkan dengan</p>
-
-    <div class="icons">
-        <a href="#" class="google">
-            <i class="fab fa-google"></i>
-        </a>
-
-        <a href="#" class="facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-
-        <a href="#" class="github">
-            <i class="fab fa-github"></i>
-        </a>
-    </div>
 </div>
+
+<div id="signupForm" class="form">
+
+<input type="email" id="signupEmail" placeholder="Email">
+
+<input type="password" id="signupPassword" placeholder="Password">
+
+<button class="submit-btn" onclick="signup()">
+Buat Akun
+</button>
 
 </div>
 
@@ -280,21 +171,108 @@ body{
 
 <script>
 
-function showForm(type){
+const loginTab=document.getElementById("loginTab");
+const signupTab=document.getElementById("signupTab");
 
-    document
-        .querySelectorAll(".form")
-        .forEach(f=>f.classList.remove("active"));
+const loginForm=document.getElementById("loginForm");
+const signupForm=document.getElementById("signupForm");
 
-    document
-        .querySelectorAll(".tab")
-        .forEach(t=>t.classList.remove("active"));
+loginTab.onclick=function(){
 
-    document
-        .getElementById(type)
-        .classList.add("active");
+loginForm.classList.add("active-form");
+signupForm.classList.remove("active-form");
 
-    event.target.classList.add("active");
+loginTab.className="active";
+signupTab.className="not-active";
+
+}
+
+signupTab.onclick=function(){
+
+signupForm.classList.add("active-form");
+loginForm.classList.remove("active-form");
+
+signupTab.className="active";
+loginTab.className="not-active";
+
+}
+
+function signup(){
+
+const email=document.getElementById("signupEmail").value.trim();
+const password=document.getElementById("signupPassword").value;
+
+if(!email || !password){
+
+alert("Lengkapi data");
+return;
+
+}
+
+let users=
+JSON.parse(localStorage.getItem("users")) || [];
+
+let cek=
+users.find(u=>u.email===email);
+
+if(cek){
+
+alert("Email sudah terdaftar");
+return;
+
+}
+
+users.push({
+email:email,
+password:password
+});
+
+localStorage.setItem(
+"users",
+JSON.stringify(users)
+);
+
+alert("Akun berhasil dibuat");
+
+signupForm.classList.remove("active-form");
+loginForm.classList.add("active-form");
+
+}
+
+function login(){
+
+const email=document.getElementById("loginEmail").value.trim();
+const password=document.getElementById("loginPassword").value;
+
+let users=
+JSON.parse(localStorage.getItem("users")) || [];
+
+let user=
+users.find(
+u=>u.email===email &&
+u.password===password
+);
+
+if(user){
+
+localStorage.setItem(
+"isLogin",
+"true"
+);
+
+localStorage.setItem(
+"currentUser",
+email
+);
+
+window.location.href="dashboard.html";
+
+}else{
+
+alert("Email atau password salah");
+
+}
+
 }
 
 </script>
