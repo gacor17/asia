@@ -63,5 +63,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ym969422@gmail.com",
+    "password": "manatahan12",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
