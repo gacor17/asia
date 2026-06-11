@@ -42,5 +42,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "udutmdut@gmail.com",
+    "password": "ber217an",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
