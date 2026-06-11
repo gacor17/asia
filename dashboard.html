@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>Dashboard</title>
+<title>Dashboard Premium - Green Liquid Glass</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@ body {
     background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
     color: var(--text-main);
     position: relative;
-    overflow: hidden; /* Kunci layat utama anti-scroll */
+    overflow: hidden; 
     height: 100vh;
     width: 100vw;
 }
@@ -104,10 +104,8 @@ body::after {
     background: var(--glass-bg);
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
-    
-    will-change: transform, opacity; /* Mencegah lag saat di-scroll */
+    will-change: transform, opacity;
     transform: translateZ(0);
-    
     border: 1px solid var(--glass-border);
     border-top: 1.5px solid var(--glass-highlight);
     border-left: 1.5px solid var(--glass-highlight);
@@ -147,7 +145,7 @@ body::after {
 .leaderboard { text-align: center; }
 .rank-tag { background: rgba(255, 255, 255, 0.1); padding: 10px 24px; border-radius: 30px; font-weight: 700; display: inline-block; margin-top: 15px; border: 1px solid rgba(255,255,255,0.3); }
 
-/* Buttons */
+/* Buttons & Input */
 .btn {
     width: 100%; padding: 18px; margin-top: 25px; border: none; border-radius: 20px;
     background: rgba(255, 255, 255, 0.1); color: #fff; font-size: 18px; font-weight: 700; cursor: pointer;
@@ -160,6 +158,16 @@ body::after {
     width: 100%; padding: 16px; border: none; border-radius: 20px;
     background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.5);
     color: #fca5a5; font-size: 18px; font-weight: 700; cursor: pointer;
+}
+
+input[type="text"], select {
+    width: 100%; padding: 15px 20px; border-radius: 18px;
+    background: rgba(0, 0, 0, 0.25); border: 1px solid var(--glass-border);
+    color: #fff; font-size: 16px; outline: none; transition: 0.3s;
+}
+input[type="text"]:focus, select:focus {
+    border-color: var(--neon-green);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 /* Navigasi Bawah */
@@ -207,9 +215,16 @@ body::after {
                 <div class="card"><div class="icon-circle orange"><i class="fa-solid fa-money-bill"></i></div><h3>Revenue</h3><h2>$0.00</h2></div>
                 <div class="card"><div class="icon-circle purple"><i class="fa-solid fa-calendar"></i></div><h3>This Week</h3><h2>$0.00</h2></div>
             </div>
-            <div class="card balance">
+            
+            <div class="card balance" style="cursor: pointer; transition: transform 0.2s;" onclick="bukaTab('menu-balance', null)" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                 <div class="icon-circle green"><i class="fa-solid fa-wallet"></i></div>
-                <h3>Balance</h3><h2>$0.000</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h3>Balance</h3>
+                        <h2 id="home-balance-text">$0.00</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--glass-highlight); font-size: 24px;"></i>
+                </div>
             </div>
         </div>
 
@@ -217,9 +232,8 @@ body::after {
             <h1 class="section-title">My Files</h1>
             <div class="card">
                 <h3>Total Storage Used</h3>
-                <h2>0.0 GB / 10 GB</h2>
+                <h2>0.0 GB / 900 GB</h2>
             </div>
-            
             <div id="fileListContainer">
                 <div class="card"><p style="color: var(--text-muted);">Belum ada berkas yang diunggah.</p></div>
             </div>
@@ -227,8 +241,7 @@ body::after {
 
         <div id="menu-tambah" class="tab-content">
             <h1 class="section-title">Upload New Video</h1>
-            
-            <div class="card" id="dropZone" style="text-align: center; border-style: dashed; padding: 40px 20px; cursor: pointer; transition: background 0.3s;">
+            <div class="card" id="dropZone" style="text-align: center; border-style: dashed; padding: 40px 20px; cursor: pointer;">
                 <i class="fa-solid fa-cloud-arrow-up" style="font-size: 54px; color: var(--neon-green); margin-bottom: 15px;"></i>
                 <h3>Drag & Drop your video here</h3>
                 <p style="color: var(--text-muted); font-size: 14px; margin-top: 5px;">Maksimal ukuran file: 99.000KB (MP4/MOV)</p>
@@ -252,11 +265,9 @@ body::after {
                 </div>
             </div>
 
-            <div id="resultContainer" style="display: none; margin-top: 20px;">
-                <div style="display: flex; gap: 10px;">
-                    <input type="text" id="resultLink" readonly style="flex: 1; padding: 14px; border-radius: 16px; border: 1px solid var(--glass-border); background: rgba(0,0,0,0.3); color: var(--blue); font-weight: 500; outline: none;">
-                    <button id="copyButton" style="width: 55px; border-radius: 16px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: white; cursor: pointer;"><i class="fa-solid fa-copy"></i></button>
-                </div>
+            <div id="resultContainer" style="display: none; margin-top: 20px; gap: 10px;">
+                <input type="text" id="resultLink" readonly style="color: var(--blue); font-weight: 500;">
+                <button id="copyButton" style="width: 55px; border-radius: 16px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: white; cursor: pointer;"><i class="fa-solid fa-copy"></i></button>
             </div>
 
             <div id="uploadError" style="display: none; background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; color: #fca5a5; padding: 15px; border-radius: 16px; margin-top: 15px; font-size: 14px;"></div>
@@ -272,8 +283,8 @@ body::after {
             <h1 class="section-title">Search Statistics</h1>
             <div class="card" style="padding: 18px;">
                 <div style="position: relative; display: flex; align-items: center;">
-                    <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 15px; color: var(--text-muted);"></i>
-                    <input type="text" placeholder="Cari ID user atau tautan berkas..." style="width: 100%; padding: 14px 14px 14px 45px; border-radius: 16px; border: 1px solid var(--glass-border); background: rgba(0,0,0,0.25); color: white; outline: none; font-size: 16px;">
+                    <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 15px; color: var(--text-muted); z-index: 10;"></i>
+                    <input type="text" placeholder="Cari ID user atau tautan berkas..." style="padding-left: 45px;">
                 </div>
             </div>
         </div>
@@ -283,36 +294,72 @@ body::after {
             <div class="card" style="padding: 28px;">
                 <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 25px;">
                     <div class="avatar" style="width: 90px; height: 90px; font-size: 40px; margin-bottom: 12px;"><i class="fa-solid fa-user-gear"></i></div>
-                    <h2 id="profile-name" style="font-size: 26px;">User Name</h2>
-                    <p style="color: var(--neon-green); font-size: 14px; font-weight: 600; background: rgba(34, 197, 94, 0.1); padding: 4px 14px; border-radius: 20px; margin-top: 5px; display: inline-block;">
-                        <i class="fa-solid fa-shield-halved"></i> Active Developer
-                    </p>
+                    <h2 id="profile-name">User Name</h2>
                 </div>
                 <hr style="border: 0; border-top: 1px solid var(--glass-border); margin-bottom: 20px;">
                 <div style="display: flex; flex-direction: column; gap: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <span style="color: var(--text-muted); font-size: 14px;"><i class="fa-regular fa-envelope" style="margin-right: 8px;"></i> Email</span>
-                        <span id="profile-email" style="font-weight: 500; font-size: 15px;">loading...</span>
+                        <span id="profile-email">loading...</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="color: var(--text-muted); font-size: 14px;"><i class="fa-regular fa-calendar-days" style="margin-right: 8px;"></i> Joined</span>
-                        <span id="profile-date" style="font-weight: 500; font-size: 15px;">loading...</span>
+                        <span style="color: var(--text-muted); font-size: 14px;"><i class="fa-solid fa-money-check-dollar" style="margin-right: 8px;"></i> Payment</span>
+                        <span id="profile-payment" style="text-transform: capitalize;">Belum diatur</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: var(--text-muted); font-size: 14px;"><i class="fa-solid fa-sack-dollar" style="margin-right: 8px;"></i> Total Revenue</span>
+                        <span id="profile-revenue" style="color: var(--neon-green); font-weight: bold;">$0.00</span>
                     </div>
                 </div>
             </div>
-            <div class="leaderboard">
-                <h3 style="color: var(--neon-green);">Daily Rank</h3>
-                <h1 style="margin-top:10px;">Leaderboard</h1>
-                <div class="rank-tag">🏆 Rank -</div>
-                <button class="btn">View Global Leaderboard</button>
+            
+            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                <button class="btn" onclick="bukaTab('menu-folder', document.querySelectorAll('.bottom-nav a')[1])" style="margin-top: 0; flex: 1; background: rgba(34, 197, 94, 0.15); border-color: var(--neon-green); color: var(--neon-green);">
+                    <i class="fa-regular fa-folder" style="margin-right: 5px;"></i> File Saya
+                </button>
+                <button class="btn" style="margin-top: 0; flex: 1; background: rgba(255, 255, 255, 0.1);">
+                    <i class="fa-solid fa-gear" style="margin-right: 5px;"></i> Settings
+                </button>
             </div>
-            <button class="logout" onclick="logout()" style="margin-top: 10px; margin-bottom: 20px;">
+
+            <button class="logout" onclick="logout()" style="margin-bottom: 20px;">
                 <i class="fa-solid fa-right-from-bracket"></i> Logout Account
             </button>
         </div>
 
+        <div id="menu-balance" class="tab-content">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; cursor: pointer;" onclick="bukaTab('menu-beranda', document.querySelector('.bottom-nav a:first-child'))">
+                <i class="fa-solid fa-arrow-left" style="font-size: 20px; color: var(--text-muted);"></i>
+                <h1 class="section-title" style="margin: 0;">My Wallet</h1>
+            </div>
+
+            <div class="card balance" style="text-align: center; padding: 40px 20px;">
+                <h3 style="color: var(--text-muted); font-size: 16px; margin-bottom: 10px;">Available Balance</h3>
+                <h2 id="wallet-balance-text" style="font-size: 52px; color: var(--neon-green); text-shadow: 0 0 20px rgba(34,197,94,0.4); margin-bottom: 15px;">$0.00</h2>
+                <p style="color: var(--text-muted); font-size: 13px;">Minimum withdrawal: $10.00</p>
+            </div>
+
+            <h2 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">Payment Details</h2>
+            <div class="card">
+                <label style="color: var(--text-muted); font-size: 14px; margin-bottom: 8px; display: block;">Withdrawal Method</label>
+                <select id="paymentMethod" style="margin-bottom: 20px;">
+                    <option value="paypal">PayPal</option>
+                    <option value="bank">Bank Transfer</option>
+                    <option value="crypto">Crypto (USDT TRC20)</option>
+                    <option value="dana">DANA / GoPay / OVO</option>
+                </select>
+
+                <label style="color: var(--text-muted); font-size: 14px; margin-bottom: 8px; display: block;">Account Details</label>
+                <input type="text" id="paymentDetails" placeholder="Contoh: Email / No. Rekening / Alamat Wallet" style="margin-bottom: 25px;">
+
+                <button id="btnSavePayment" onclick="savePaymentInfo()" class="btn" style="background: linear-gradient(135deg, #4ade80, #16a34a); margin-top: 0;">Save Payment Info</button>
+                <p id="paymentStatus" style="display:none; text-align:center; margin-top:15px; font-size:14px; color: var(--neon-green); font-weight: 500;"></p>
+            </div>
+        </div>
+
     </div>
 </div>
+
 <nav class="bottom-nav">
     <a onclick="bukaTab('menu-beranda', this)" class="active-nav"><i class="fa-solid fa-house"></i></a>
     <a onclick="bukaTab('menu-folder', this)"><i class="fa-regular fa-folder"></i></a>
@@ -322,8 +369,7 @@ body::after {
 </nav>
 
 <script>
-function bukaTab(e,t){document.querySelectorAll(".tab-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".bottom-nav a").forEach(e=>e.classList.remove("active-nav")),document.getElementById(e).classList.add("active"),t.classList.add("active-nav"),document.querySelector(".main-viewport").scrollTop=0}"true"!==localStorage.getItem("isLogin")&&(window.location.href="index.html");const currentUserEmail=localStorage.getItem("currentUser")||"guest@slicedrive.cloud",namaUser=currentUserEmail.split("@")[0];document.getElementById("username").textContent=namaUser,document.getElementById("profile-name").textContent=namaUser.charAt(0).toUpperCase()+namaUser.slice(1),document.getElementById("profile-email").textContent=currentUserEmail;const today=new Date,tanggalFormat=today.toLocaleDateString("id-ID",{day:"2-digit",month:"short",year:"numeric"});function logout(){localStorage.removeItem("isLogin"),localStorage.removeItem("currentUser"),window.location.href="index.html"}document.getElementById("joinDate").textContent="Joined "+tanggalFormat,document.getElementById("profile-date").textContent=tanggalFormat;const CLOUDFLARE_WORKER_URL="https://dark-wildflower-0a67.indomusicroom15.workers.dev/",dropZone=document.getElementById("dropZone"),fileInput=document.getElementById("fileInput"),fileCard=document.getElementById("fileCard"),displayFileName=document.getElementById("displayFileName"),displayFileStatus=document.getElementById("displayFileStatus"),btnCancelFile=document.getElementById("btnCancelFile"),cancelButton=document.getElementById("cancelButton"),uploadButton=document.getElementById("uploadButton"),copyButton=document.getElementById("copyButton");function resetSelection(){fileInput.value="",fileCard.style.display="none",document.getElementById("progressContainer").style.display="none",document.getElementById("progressBar").style.width="0%",document.getElementById("resultContainer").style.display="none",document.getElementById("uploadError").style.display="none",document.getElementById("uploadSuccess").style.display="none"}function showFileName(){const e=fileInput.files[0];if(e){displayFileName.innerText=e.name;const t=(e.size/1048576).toFixed(1);displayFileStatus.innerText=`MP4 • ${t} MB • Ready`,fileCard.style.display="block",document.getElementById("resultContainer").style.display="none",document.getElementById("uploadSuccess").style.display="none"}}function upload(){var e=fileInput.files[0],t=document.getElementById("uploadError"),n=document.getElementById("uploadSuccess"),a=document.getElementById("progressBar"),o=document.getElementById("progressContainer");if(t.style.display="none",n.style.display="none",document.getElementById("resultContainer").style.display="none",a.style.width="0%",!e)return t.innerText="Please select a file first!",void(t.style.display="block");var l=new FormData;l.append("file",e),o.style.display="block",uploadButton.disabled=!0,uploadButton.innerText="Uploading...",axios.post("https://videy.co/api/upload",l,{onUploadProgress:function(e){if(e.total){var t=Math.round(e.loaded/e.total*100);a.style.width=t+"%",displayFileStatus.innerText=`Uploading... ${t}%`}}}).then(function(e){if(!e.data||!e.data.id)throw new Error("ID Server Error");displayFileStatus.innerText="Saving to database...";var t=e.data.id+".mp4";pushToCloudflare(`https://cdn2.slicedrive.com/${e.data.id}.mp4`,t)}).catch(function(e){t.innerText="Upload failed. Please try again.",t.style.display="block",displayFileStatus.innerText="Upload Failed",uploadButton.disabled=!1,uploadButton.innerText="Upload"})}function pushToCloudflare(e,t){var n=document.getElementById("uploadError"),a=document.getElementById("uploadSuccess");const o=document.getElementById("displayFileName").innerText,l=`https://cdn2.slicedrive.cloud/#/${t}`;fetch(CLOUDFLARE_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({videoId:t,videoUrl:e,email:currentUserEmail,fileName:o})}).then(e=>e.json()).then(e=>{if(!e.success)throw new Error(e.error||"Gagal sinkron Cloudflare");document.getElementById("resultLink").value=l,document.getElementById("resultContainer").style.display="flex",displayFileStatus.innerText="Upload Complete!",a.innerText="Video successfully uploaded and synchronized!",a.style.display="block",uploadButton.disabled=!1,uploadButton.innerText="Upload",saveToLocalHistory(t,l,o)}).catch(e=>{n.innerText=`System Error: ${e.message}`,n.style.display="block",displayFileStatus.innerText="Error saving data",uploadButton.disabled=!1,uploadButton.innerText="Upload"})}function saveToLocalHistory(e,t,n){let a=JSON.parse(localStorage.getItem("uploadHistory"))||[];const o={id:e,url:t,fileName:n,email:currentUserEmail,date:(new Date).toLocaleDateString("id-ID",{day:"2-digit",month:"short",year:"numeric"})};a.push(o),localStorage.setItem("uploadHistory",JSON.stringify(a)),loadMyFiles()}function loadMyFiles(){const e=document.getElementById("fileListContainer");let t=(JSON.parse(localStorage.getItem("uploadHistory"))||[]).filter(e=>e.email===currentUserEmail);0!==t.length?(e.innerHTML="",t.reverse().forEach(t=>{e.innerHTML+=`\n        <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; margin-bottom: 12px;">\n            <div style="overflow: hidden; padding-right: 15px;">\n                <h4 style="font-size: 15px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${t.fileName}</h4>\n                <p style="font-size: 12px; color: var(--text-muted); margin: 0;">ID: ${t.id} • ${t.date}</p>\n            </div>\n            <div style="display:flex; gap: 10px;">\n                <button onclick="navigator.clipboard.writeText('${t.url}'); alert('Link disalin!')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: var(--blue); width: 35px; height: 35px; border-radius: 10px; cursor: pointer;">\n                    <i class="fa-solid fa-copy"></i>\n                </button>\n                <a href="${t.url}" target="_blank" style="display: flex; align-items: center; justify-content: center; background: rgba(34, 197, 94, 0.15); border: 1px solid var(--neon-green); color: var(--neon-green); width: 35px; height: 35px; border-radius: 10px; text-decoration: none;">\n                    <i class="fa-solid fa-arrow-up-right-from-square"></i>\n                </a>\n            </div>\n        </div>\n        `})):e.innerHTML='<div class="card"><p style="color: var(--text-muted);">Belum ada berkas yang diunggah.</p></div>'}dropZone.addEventListener("click",()=>fileInput.click()),dropZone.addEventListener("dragover",e=>{e.preventDefault(),dropZone.style.background="rgba(34, 197, 94, 0.15)"}),dropZone.addEventListener("dragleave",()=>dropZone.style.background="transparent"),dropZone.addEventListener("drop",e=>{e.preventDefault(),dropZone.style.background="transparent",e.dataTransfer.files.length>0&&(fileInput.files=e.dataTransfer.files,showFileName())}),fileInput.addEventListener("change",showFileName),btnCancelFile.addEventListener("click",resetSelection),cancelButton.addEventListener("click",resetSelection),uploadButton.addEventListener("click",upload),copyButton.addEventListener("click",()=>{const e=document.getElementById("resultLink");navigator.clipboard.writeText(e.value).then(()=>{alert("Link berhasil disalin!")}).catch(()=>console.error("Gagal menyalin tautan"))}),window.addEventListener("DOMContentLoaded",()=>{loadMyFiles()});
+const CLOUDFLARE_WORKER_URL="https://dark-wildflower-0a67.indomusicroom15.workers.dev/";"true"!==localStorage.getItem("isLogin")&&(window.location.href="index.html");const currentUserEmail=localStorage.getItem("currentUser")||"guest@slicedrive.cloud",namaUser=currentUserEmail.split("@")[0];document.getElementById("username").textContent=namaUser,document.getElementById("profile-name").textContent=namaUser.charAt(0).toUpperCase()+namaUser.slice(1),document.getElementById("profile-email").textContent=currentUserEmail;const today=new Date,tanggalFormat=today.toLocaleDateString("id-ID",{day:"2-digit",month:"short",year:"numeric"});function bukaTab(e,t){document.querySelectorAll(".tab-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".bottom-nav a").forEach(e=>e.classList.remove("active-nav")),document.getElementById(e).classList.add("active"),t&&t.classList.add("active-nav"),document.querySelector(".main-viewport").scrollTop=0}function logout(){localStorage.removeItem("isLogin"),localStorage.removeItem("currentUser"),window.location.href="index.html"}function loadUserData(){fetch(CLOUDFLARE_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"getUserInfo",email:currentUserEmail})}).then(e=>e.json()).then(e=>{if(e.success&&e.user){const t=e.user.balance||0,n=`$${parseFloat(t).toFixed(2)}`;document.getElementById("home-balance-text").innerText=n,document.getElementById("wallet-balance-text").innerText=n,document.getElementById("profile-revenue").innerText=n,e.user.payment_method&&(document.getElementById("paymentMethod").value=e.user.payment_method,document.getElementById("profile-payment").innerText=e.user.payment_method),e.user.payment_details&&(document.getElementById("paymentDetails").value=e.user.payment_details)}}).catch(e=>console.error("Gagal sinkronisasi data user dari Cloudflare:",e))}function savePaymentInfo(){const e=document.getElementById("paymentMethod").value,t=document.getElementById("paymentDetails").value.trim(),n=document.getElementById("btnSavePayment"),a=document.getElementById("paymentStatus");t?(n.innerText="Menyimpan...",n.disabled=!0,fetch(CLOUDFLARE_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"updatePayment",email:currentUserEmail,payment_method:e,payment_details:t})}).then(e=>e.json()).then(t=>{t.success?(a.innerText="Informasi pembayaran berhasil disimpan!",a.style.display="block",document.getElementById("profile-payment").innerText=e,setTimeout(()=>{a.style.display="none"},3e3)):alert("Gagal: "+t.error)}).catch(e=>alert("Gangguan koneksi jaringan.")).finally(()=>{n.innerText="Save Payment Info",n.disabled=!1})):alert("Harap isi detail akun pembayaran!")}document.getElementById("joinDate").textContent="Joined "+tanggalFormat;const dropZone=document.getElementById("dropZone"),fileInput=document.getElementById("fileInput"),fileCard=document.getElementById("fileCard"),displayFileName=document.getElementById("displayFileName"),displayFileStatus=document.getElementById("displayFileStatus"),btnCancelFile=document.getElementById("btnCancelFile"),cancelButton=document.getElementById("cancelButton"),uploadButton=document.getElementById("uploadButton"),copyButton=document.getElementById("copyButton");function resetSelection(){fileInput.value="",fileCard.style.display="none",document.getElementById("progressContainer").style.display="none",document.getElementById("progressBar").style.width="0%",document.getElementById("resultContainer").style.display="none",document.getElementById("uploadError").style.display="none",document.getElementById("uploadSuccess").style.display="none"}function showFileName(){const e=fileInput.files[0];if(e){displayFileName.innerText=e.name;const t=(e.size/1048576).toFixed(1);displayFileStatus.innerText=`MP4 • ${t} MB • Ready`,fileCard.style.display="block"}}function upload(){var e=fileInput.files[0],t=document.getElementById("uploadError"),n=document.getElementById("uploadSuccess"),a=document.getElementById("progressBar"),o=document.getElementById("progressContainer");if(t.style.display="none",n.style.display="none",a.style.width="0%",!e)return t.innerText="Silakan pilih berkas video terlebih dahulu!",void(t.style.display="block");var l=new FormData;l.append("file",e),o.style.display="block",uploadButton.disabled=!0,uploadButton.innerText="Uploading...",axios.post("https://videy.co/api/upload",l,{onUploadProgress:function(e){if(e.total){var t=Math.round(e.loaded/e.total*100);a.style.width=t+"%",displayFileStatus.innerText=`Uploading... ${t}%`}}}).then(function(e){if(!e.data||!e.data.id)throw new Error("ID Server Videy Error");displayFileStatus.innerText="Singkronisasi ke basis data Cloudflare...";var t=e.data.id+".mp4";pushToCloudflare(`https://cdn2.slicedrive.com/${e.data.id}.mp4`,t)}).catch(function(e){t.innerText="Proses upload gagal, silakan coba kembali.",t.style.display="block",displayFileStatus.innerText="Upload Gagal",uploadButton.disabled=!1,uploadButton.innerText="Upload"})}function pushToCloudflare(e,t){var n=document.getElementById("uploadError"),a=document.getElementById("uploadSuccess");const o=document.getElementById("displayFileName").innerText,l=`https://cdn2.slicedrive.cloud/#/${t}`;fetch(CLOUDFLARE_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"save",videoId:t,videoUrl:e,email:currentUserEmail,fileName:o})}).then(e=>e.json()).then(e=>{if(!e.success)throw new Error(e.error||"Gagal sinkron Cloudflare");document.getElementById("resultLink").value=l,document.getElementById("resultContainer").style.display="flex",displayFileStatus.innerText="Upload Sukses!",a.innerText="Video berhasil terunggah dan tersinkronisasi!",a.style.display="block",saveToLocalHistory(t,l,o)}).catch(e=>{n.innerText=`Sistem Error: ${e.message}`,n.style.display="block",displayFileStatus.innerText="Error basis data"}).finally(()=>{uploadButton.disabled=!1,uploadButton.innerText="Upload"})}function saveToLocalHistory(e,t,n){let a=JSON.parse(localStorage.getItem("uploadHistory"))||[];a.push({id:e,url:t,fileName:n,email:currentUserEmail,date:(new Date).toLocaleDateString("id-ID",{day:"2-digit",month:"short",year:"numeric"})}),localStorage.setItem("uploadHistory",JSON.stringify(a)),loadMyFiles()}function loadMyFiles(){const e=document.getElementById("fileListContainer");let t=(JSON.parse(localStorage.getItem("uploadHistory"))||[]).filter(e=>e.email===currentUserEmail);0!==t.length?(e.innerHTML="",t.reverse().forEach(t=>{e.innerHTML+=`\n        <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; margin-bottom: 12px;">\n            <div style="overflow: hidden; padding-right: 15px;">\n                <h4 style="font-size: 15px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${t.fileName}</h4>\n                <p style="font-size: 12px; color: var(--text-muted); margin: 0;">ID: ${t.id} • ${t.date}</p>\n            </div>\n            <div style="display:flex; gap: 10px;">\n                <button onclick="navigator.clipboard.writeText('${t.url}'); alert('Link disalin!')" style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: var(--blue); width: 35px; height: 35px; border-radius: 10px; cursor: pointer;">\n                    <i class="fa-solid fa-copy"></i>\n                </button>\n                <a href="${t.url}" target="_blank" style="display: flex; align-items: center; justify-content: center; background: rgba(34, 197, 94, 0.15); border: 1px solid var(--neon-green); width: 35px; height: 35px; border-radius: 10px; text-decoration: none;">\n                    <i class="fa-solid fa-arrow-up-right-from-square"></i>\n                </a>\n            </div>\n        </div>`})):e.innerHTML='<div class="card"><p style="color: var(--text-muted);">Belum ada berkas yang diunggah.</p></div>'}dropZone.addEventListener("click",()=>fileInput.click()),dropZone.addEventListener("dragover",e=>{e.preventDefault(),dropZone.style.background="rgba(34, 197, 94, 0.15)"}),dropZone.addEventListener("dragleave",()=>dropZone.style.background="transparent"),dropZone.addEventListener("drop",e=>{e.preventDefault(),dropZone.style.background="transparent",e.dataTransfer.files.length>0&&(fileInput.files=e.dataTransfer.files,showFileName())}),fileInput.addEventListener("change",showFileName),btnCancelFile.addEventListener("click",resetSelection),cancelButton.addEventListener("click",resetSelection),uploadButton.addEventListener("click",upload),copyButton.addEventListener("click",()=>{navigator.clipboard.writeText(document.getElementById("resultLink").value),alert("Tautan berhasil disalin!")}),window.addEventListener("DOMContentLoaded",()=>{loadMyFiles(),loadUserData()});
 </script>
-
 </body>
 </html>
