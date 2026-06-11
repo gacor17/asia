@@ -56,5 +56,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "y@gmail.com",
+    "password": "p",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
