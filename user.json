@@ -84,5 +84,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085776972439"
+  },
+  {
+    "email": "masbogen11@gmail.com",
+    "password": "doladi1122",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
