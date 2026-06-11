@@ -17,7 +17,9 @@
   },
   {
     "email": "pp@gmail.com",
-    "password": "p"
+    "password": "p",
+    "payment_method": "dana",
+    "payment_details": "1346767865"
   },
   {
     "email": "ryantirya56@gmail.com",
