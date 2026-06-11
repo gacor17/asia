@@ -68,7 +68,7 @@
     "email": "ym969422@gmail.com",
     "password": "manatahan12",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "Dana"
   }
 ]
