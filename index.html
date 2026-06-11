@@ -27,12 +27,12 @@ body {
     align-items: center;
     overflow: hidden;
     
-    /* Ganti bg-bunga.jpg dengan nama file gambar Anda */
-    background-image: url('867c83b8c949f3a6e89d90fa6643df0e.jpg'); 
+    /* Background diambil dari link CDN eksternal */
+    background-image: url('https://cdn.aceimg.com/QvCdh9LUU.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #5a8ab4; /* Warna cadangan jika gambar belum dimuat */
+    background-color: #5a8ab4; /* Warna cadangan jika gambar gagal dimuat */
 }
 
 /* ==========================================
@@ -268,7 +268,6 @@ input:focus {
 // ==========================================
 // KONFIGURASI CLOUDFLARE WORKER
 // ==========================================
-// Ganti URL ini jika URL Worker Anda berbeda
 const CLOUDFLARE_WORKER_URL = "https://dark-wildflower-0a67.indomusicroom15.workers.dev/";
 
 // Elemen UI
@@ -306,7 +305,6 @@ async function signup() {
         return;
     }
 
-    // Ubah teks tombol jadi loading
     btn.innerText = "Memproses...";
     btn.disabled = true;
 
@@ -325,7 +323,6 @@ async function signup() {
 
         if (data.success) {
             alert("Akun berhasil dibuat! Silakan login.");
-            // Pindahkan ke tab login secara otomatis
             signupForm.classList.remove("active-form");
             loginForm.classList.add("active-form");
             signupTab.className = "not-active";
@@ -352,7 +349,6 @@ async function login() {
         return;
     }
 
-    // Ubah teks tombol jadi loading
     btn.innerText = "Mengecek data...";
     btn.disabled = true;
 
@@ -370,11 +366,9 @@ async function login() {
         const data = await response.json();
 
         if (data.success) {
-            // Jika login sukses, simpan sesi ke browser
             localStorage.setItem("isLogin", "true");
             localStorage.setItem("currentUser", email);
             
-            // Arahkan ke file dashboard (pastikan nama file Anda benar, misalnya dashboard.html)
             window.location.href = "dashboard.html";
         } else {
             alert("Gagal: " + (data.error || "Email atau password salah"));
@@ -388,7 +382,6 @@ async function login() {
     btn.disabled = false;
 }
 </script>
-
 
 </body>
 </html>
