@@ -77,5 +77,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "padimerah32@gmail.com",
+    "password": "ll08l99l",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
