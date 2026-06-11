@@ -6,10 +6,11 @@
 
 <title>LOGIN FORM</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
 <style>
 /* ==========================================
    UI DESIGN: REALISTIC LIQUID GLASS
-   (Mengikuti referensi gambar oval/air)
    ========================================== */
 
 * {
@@ -27,12 +28,55 @@ body {
     align-items: center;
     overflow: hidden;
     
-    /* Background diambil dari link CDN eksternal */
     background-image: url('https://cdn.aceimg.com/QvCdh9LUU.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #5a8ab4; /* Warna cadangan jika gambar gagal dimuat */
+    background-color: #5a8ab4; 
+}
+
+/* ==========================================
+   HEADER LINGKUNGAN & FOOTER PROFESIONAL
+   ========================================== */
+.brand-logo {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800; /* Bold text */
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 10;
+}
+
+.footer-links {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.footer-links span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
 }
 
 /* ==========================================
@@ -43,40 +87,29 @@ body {
     z-index: 2;
     width: 380px;
     padding: 40px 35px;
-    
-    /* Membuat bentuk oval/kapsul */
     border-radius: 50px; 
     
-    /* Warna kaca yang sangat tipis */
     background: linear-gradient(
         135deg, 
         rgba(255, 255, 255, 0.15) 0%, 
         rgba(255, 255, 255, 0.02) 100%
     );
     
-    /* Blur yang rendah agar bunga di belakang tetap terlihat jelas */
     backdrop-filter: blur(6px) saturate(120%);
     -webkit-backdrop-filter: blur(6px) saturate(120%);
     
-    /* Garis pinggir kaca: atas tebal (pantulan lampu), bawah lebih tipis */
     border-top: 2px solid rgba(255, 255, 255, 0.7);
     border-left: 1px solid rgba(255, 255, 255, 0.4);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
     
-    /* RAHASIA EFEK AIR DI BAWAH: Kombinasi Inset Shadow */
     box-shadow: 
-        /* Bayangan jatuh ke belakang */
         0 30px 60px rgba(0, 0, 0, 0.25),
-        /* Cahaya putih di tepi atas dalam */
         inset 0 5px 15px rgba(255, 255, 255, 0.4),
-        /* Kumpulan pantulan cahaya "air" yang menebal di bagian dasar */
         inset 0 -30px 40px rgba(255, 255, 255, 0.35),
-        /* Garis kilap putih tajam persis di dasar wadah */
         inset 0 -3px 6px rgba(255, 255, 255, 0.8);
 }
 
-/* Tipografi */
 .title {
     text-align: center;
     font-size: 32px;
@@ -87,7 +120,6 @@ body {
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-/* Tabs */
 .tabs {
     display: flex;
     padding: 4px;
@@ -120,14 +152,12 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* Wrapper untuk transisi */
 .form-wrapper {
     position: relative;
     overflow-x: hidden;
-    min-height: 220px;
+    min-height: 290px; 
 }
 
-/* Base Form - Transisi Geser */
 .form {
     position: absolute;
     width: 100%;
@@ -150,30 +180,28 @@ body {
     transform: translateX(0) !important;
 }
 
-/* Form Input - Transparan agar kaca di belakangnya tidak rusak */
-input {
+input[type="email"],
+input[type="password"] {
     width: 100%;
     padding: 16px 20px;
     margin-bottom: 16px;
     border-radius: 20px;
-    
     background: rgba(0, 0, 0, 0.15);
-    
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    
     font-size: 16px;
     color: #ffffff;
     transition: all 0.3s ease;
-    
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-input::placeholder {
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
 
-input:focus {
+input[type="email"]:focus,
+input[type="password"]:focus {
     outline: none;
     background: rgba(0, 0, 0, 0.3);
     border-color: rgba(255, 255, 255, 0.7);
@@ -182,7 +210,36 @@ input:focus {
         0 0 0 4px rgba(255, 255, 255, 0.15);
 }
 
-/* Tombol Submit Glassy */
+/* Checkbox Syarat & Ketentuan */
+.tos-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-left: 5px;
+}
+
+.tos-container input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    appearance: auto;
+}
+
+.tos-container label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+}
+
+.tos-container a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Tombol Submit */
 .submit-btn {
     width: 100%;
     margin-top: 8px;
@@ -195,7 +252,6 @@ input:focus {
     color: #ffffff;
     text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     
-    /* Tombol juga dibuat seperti kaca terpisah */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-top: 1.5px solid rgba(255, 255, 255, 0.7);
@@ -222,23 +278,163 @@ input:focus {
     transform: none;
 }
 
-/* Responsivitas Mobile */
+/* ==========================================
+   TOS MODAL / POPUP
+   ========================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 550px;
+    background: rgba(15, 25, 35, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 2px 10px rgba(255, 255, 255, 0.1);
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+}
+
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 24px 24px 0 0;
+}
+
+.modal-header h3 {
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 30px; height: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.close-btn:hover { 
+    color: #fff; 
+    background: rgba(239, 68, 68, 0.5); 
+    border-color: #ef4444;
+}
+
+.modal-body {
+    padding: 24px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar untuk Modal */
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.modal-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.modal-body h4 {
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.modal-body p, .modal-body ul {
+    margin-bottom: 12px;
+}
+
+.modal-body ul {
+    padding-left: 20px;
+}
+
+.modal-body li {
+    margin-bottom: 6px;
+}
+
+.modal-body a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.modal-body a:hover {
+    text-decoration: underline;
+}
+
 @media(max-width: 450px) {
     .container {
         width: 90%;
         padding: 35px 24px;
         border-radius: 40px;
     }
-    .title {
-        font-size: 26px;
+    .title { font-size: 26px; }
+    
+    .brand-logo {
+        top: 20px;
+        left: 20px;
+        font-size: 20px;
+    }
+    .footer-links {
+        gap: 15px;
+        font-size: 12px;
+        bottom: 15px;
     }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
+<!-- LOGO DI ATAS KIRI -->
+<div class="brand-logo">
+    slicedrive
+</div>
 
+<div class="container">
     <div class="title">
         MASUK/DAFTAR
     </div>
@@ -258,14 +454,87 @@ input:focus {
         <div id="signupForm" class="form">
             <input type="email" id="signupEmail" placeholder="Email">
             <input type="password" id="signupPassword" placeholder="Password">
+            <input type="password" id="signupConfirmPassword" placeholder="Konfirmasi Password">
+            
+            <div class="tos-container">
+                <input type="checkbox" id="tosCheckbox">
+                <label for="tosCheckbox">Saya setuju dengan <a href="#" onclick="bukaTos(event)">Syarat & Ketentuan</a></label>
+            </div>
+
             <button class="submit-btn" onclick="signup()">Buat Akun</button>
         </div>
     </div>
+</div>
 
+<!-- FOOTER DI BAWAH -->
+<div class="footer-links">
+    <span>&copy; 2026 slicedrive</span>
+    <a href="#" onclick="bukaTos(event)">Terms</a>
+    <a href="mailto:support@vidoy.com">Support</a>
+    <a href="mailto:abuse@vidoy.com">Report</a>
+</div>
+
+<!-- MODAL SYARAT & KETENTUAN (TOS) -->
+<div id="tosModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Terms of Service</h3>
+            <button onclick="tutupTos()" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-body">
+            <p><em>Last updated: May 27, 2026</em></p>
+
+            <h4>1. Acceptance of Terms</h4>
+            <p>By creating an account, uploading content, embedding videos, or using Vidoy services, you agree to these Terms of Service. If you do not agree, you must stop using Vidoy.</p>
+
+            <h4>2. Account Registration</h4>
+            <p>You are responsible for keeping your account credentials secure. You must provide accurate information and may not create accounts for spam, abuse, impersonation, fraud, or unauthorized activity.</p>
+
+            <h4>3. User Content</h4>
+            <p>You retain ownership of content you upload, but you grant Vidoy a limited license to host, process, display, stream, cache, and distribute that content as needed to operate the service.</p>
+
+            <h4>4. Prohibited Content</h4>
+            <p>You may not upload, share, monetize, or promote content that includes:</p>
+            <ul>
+                <li>Child sexual abuse material, underage sexual content, or any exploitative content.</li>
+                <li>Non-consensual intimate content, revenge content, hidden camera content, or doxxing.</li>
+                <li>Copyrighted material that you do not own or have permission to use.</li>
+                <li>Malware, phishing, deceptive downloads, forced redirects, or harmful scripts.</li>
+                <li>Illegal content, fraud, hate, threats, harassment, or content that violates applicable laws.</li>
+            </ul>
+
+            <h4>5. Traffic Quality and Abuse</h4>
+            <p>Artificial views, bot traffic, automated refreshes, incentive abuse, proxy abuse, iframe manipulation, or attempts to bypass Vidoy tracking and security systems are prohibited. Vidoy may remove views, adjust earnings, suspend accounts, or block domains involved in suspicious activity.</p>
+
+            <h4>6. Earnings and Payouts</h4>
+            <p>Earnings shown in the dashboard may be estimated and subject to review, fraud checks, advertiser validation, chargebacks, traffic quality adjustments, and minimum payout requirements. Vidoy may delay, cancel, or reverse payouts connected to prohibited activity.</p>
+
+            <h4>7. Copyright and Takedowns</h4>
+            <p>If Vidoy receives a valid copyright complaint or legal request, Vidoy may remove or disable access to the related content. Repeat infringement may result in account termination.</p>
+
+            <h4>8. Custom Domains and Embeds</h4>
+            <p>Users are responsible for domains, embeds, scripts, and traffic sources connected to their account. Vidoy may require domain validation, block unsafe domains, or disable embeds that create security, compliance, or abuse risks.</p>
+
+            <h4>9. Service Availability</h4>
+            <p>Vidoy aims to provide reliable service, but interruptions, maintenance, CDN issues, domain changes, or third-party provider failures may occur. Vidoy is not liable for indirect losses caused by downtime or service changes.</p>
+
+            <h4>10. Suspension and Termination</h4>
+            <p>Vidoy may suspend or terminate accounts that violate these Terms, create legal risk, harm the platform, or abuse traffic, monetization, upload, domain, or security systems.</p>
+
+            <h4>11. Changes to Terms</h4>
+            <p>Vidoy may update these Terms from time to time. Continued use of Vidoy after updates means you accept the revised Terms.</p>
+
+            <h4>12. Contact</h4>
+            <p>Questions about these Terms can be sent to <a href="mailto:vio@vidoy.com">vio@vidoy.com</a>.</p>
+
+            <h4>13. Abuse Report</h4>
+            <p>Report abuse can be sent to <a href="mailto:abuse@vidoy.com">abuse@vidoy.com</a>.</p>
+        </div>
+    </div>
 </div>
 
 <script>
-const CLOUDFLARE_WORKER_URL="https://dark-wildflower-0a67.indomusicroom15.workers.dev/",loginTab=document.getElementById("loginTab"),signupTab=document.getElementById("signupTab"),loginForm=document.getElementById("loginForm"),signupForm=document.getElementById("signupForm");async function signup(){const e=document.getElementById("signupEmail").value.trim(),a=document.getElementById("signupPassword").value,t=document.querySelector("#signupForm .submit-btn");if(e&&a){t.innerText="Memproses...",t.disabled=!0;try{const t=await fetch(CLOUDFLARE_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"register",email:e,password:a})}),n=await t.json();n.success?(alert("Akun berhasil dibuat! Silakan login."),signupForm.classList.remove("active-form"),loginForm.classList.add("active-form"),signupTab.className="not-active",loginTab.className="active"):alert("Gagal: "+(n.error||"Terjadi kesalahan saat mendaftar."))}catch(e){console.error("Error Worker:",e),alert("Kesalahan jaringan atau server tidak merespons.")}t.innerText="Buat Akun",t.disabled=!1}else alert("Lengkapi data email dan password!")}async function login(){const e=document.getElementById("loginEmail").value.trim(),a=document.getElementById("loginPassword").value,t=document.querySelector("#loginForm .submit-btn");if(e&&a){t.innerText="Mengecek data...",t.disabled=!0;try{const t=await fetch(CLOUDFLARE_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"login",email:e,password:a})}),n=await t.json();n.success?(localStorage.setItem("isLogin","true"),localStorage.setItem("currentUser",e),window.location.href="dashboard.html"):alert("Gagal: "+(n.error||"Email atau password salah"))}catch(e){console.error("Error Worker:",e),alert("Kesalahan jaringan atau server tidak merespons.")}t.innerText="Login",t.disabled=!1}else alert("Masukkan email dan password!")}loginTab.onclick=function(){loginForm.classList.add("active-form"),signupForm.classList.remove("active-form"),loginTab.className="active",signupTab.className="not-active"},signupTab.onclick=function(){signupForm.classList.add("active-form"),loginForm.classList.remove("active-form"),signupTab.className="active",loginTab.className="not-active"};
+const tosModal=document.getElementById("tosModal");function bukaTos(e){e.preventDefault(),tosModal.classList.add("show")}function tutupTos(){tosModal.classList.remove("show")}window.addEventListener("click",function(e){e.target===tosModal&&tutupTos()});const CLOUDFLARE_WORKER_URL="https://dark-wildflower-0a67.indomusicroom15.workers.dev/",loginTab=document.getElementById("loginTab"),signupTab=document.getElementById("signupTab"),loginForm=document.getElementById("loginForm"),signupForm=document.getElementById("signupForm");async function signup(){const e=document.getElementById("signupEmail").value.trim(),a=document.getElementById("signupPassword").value,t=document.getElementById("signupConfirmPassword").value,n=document.getElementById("tosCheckbox").checked,o=document.querySelector("#signupForm .submit-btn");if(e&&a&&t)if(a===t)if(n){o.innerText="Memproses...",o.disabled=!0;try{const t=await fetch(CLOUDFLARE_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"register",email:e,password:a})}),n=await t.json();n.success?(alert("Akun berhasil dibuat! Silakan login."),document.getElementById("signupEmail").value="",document.getElementById("signupPassword").value="",document.getElementById("signupConfirmPassword").value="",document.getElementById("tosCheckbox").checked=!1,signupForm.classList.remove("active-form"),loginForm.classList.add("active-form"),signupTab.className="not-active",loginTab.className="active"):alert("Gagal: "+(n.error||"Terjadi kesalahan saat mendaftar."))}catch(e){console.error("Error Worker:",e),alert("Kesalahan jaringan atau server tidak merespons.")}o.innerText="Buat Akun",o.disabled=!1}else alert("Anda harus menyetujui Syarat & Ketentuan untuk mendaftar.");else alert("Password dan Konfirmasi Password tidak cocok!");else alert("Lengkapi semua data pendaftaran!")}async function login(){const e=document.getElementById("loginEmail").value.trim(),a=document.getElementById("loginPassword").value,t=document.querySelector("#loginForm .submit-btn");if(e&&a){t.innerText="Mengecek data...",t.disabled=!0;try{const t=await fetch(CLOUDFLARE_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"login",email:e,password:a})}),n=await t.json();n.success?(localStorage.setItem("isLogin","true"),localStorage.setItem("currentUser",e),window.location.href="dashboard.html"):alert("Gagal: "+(n.error||"Email atau password salah"))}catch(e){console.error("Error Worker:",e),alert("Kesalahan jaringan atau server tidak merespons.")}t.innerText="Login",t.disabled=!1}else alert("Masukkan email dan password!")}loginTab.onclick=function(){loginForm.classList.add("active-form"),signupForm.classList.remove("active-form"),loginTab.className="active",signupTab.className="not-active"},signupTab.onclick=function(){signupForm.classList.add("active-form"),loginForm.classList.remove("active-form"),signupTab.className="active",loginTab.className="not-active"};
 </script>
 
 </body>
