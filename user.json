@@ -119,5 +119,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "regiiialkatiri@gmail.com",
+    "password": "Bayu327874#@!",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
