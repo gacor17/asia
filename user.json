@@ -140,5 +140,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "jhonnibelenk@gmail.com",
+    "password": "Komodo88",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
