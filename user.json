@@ -133,5 +133,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "gyurabiopori@gmail.com",
+    "password": "gyurabiopori343()",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
