@@ -154,5 +154,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "badritamam572@gmail.com",
+    "password": "08021995",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
