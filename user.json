@@ -147,5 +147,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ekogirya@gmail.com",
+    "password": "Selma77",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
