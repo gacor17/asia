@@ -112,5 +112,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "082163241598"
+  },
+  {
+    "email": "teosilala377@gmail.com",
+    "password": "teo123mc",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
