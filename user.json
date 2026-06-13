@@ -196,5 +196,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "nicholasfellest2@gmail.com"
+  },
+  {
+    "email": "rrong5230@gmail.com",
+    "password": "Khmer@56",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
