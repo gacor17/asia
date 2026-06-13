@@ -210,5 +210,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "aganz6008@gmail.com",
+    "password": "120426",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
