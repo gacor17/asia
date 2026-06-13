@@ -245,5 +245,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "boyali353@gmail.com",
+    "password": "Putra1833",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
