@@ -182,5 +182,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "medanlangkat5@gmail.com",
+    "password": "medan1401",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
