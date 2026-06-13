@@ -203,5 +203,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "tehliya55@gmail.com",
+    "password": "putra25",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
