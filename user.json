@@ -189,5 +189,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "082164636965"
+  },
+  {
+    "email": "nicholasfellest2@gmail.com",
+    "password": "niko67Fel",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
