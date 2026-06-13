@@ -217,5 +217,12 @@
     "balance": 0,
     "payment_method": "bank",
     "payment_details": "086601008111506"
+  },
+  {
+    "email": "wiliamsebas15@gmail.com",
+    "password": "JayapuraManado15",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
