@@ -231,5 +231,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "rynstilllearning17@gmail.com",
+    "password": "Riyanking02",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
