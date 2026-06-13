@@ -252,5 +252,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "rmat0017@gmail.com",
+    "password": "rahmat123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
