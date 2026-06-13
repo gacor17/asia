@@ -175,5 +175,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "keongracing@gmail.com",
+    "password": "Aa123456789",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
