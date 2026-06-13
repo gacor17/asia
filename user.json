@@ -280,5 +280,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "rshekar729@gmail.com",
+    "password": "r1r2r3r4",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
