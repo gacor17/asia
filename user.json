@@ -292,7 +292,7 @@
     "email": "rehannadja12@gmail.com",
     "password": "pepek12",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "085783616018"
   }
 ]
