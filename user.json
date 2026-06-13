@@ -273,5 +273,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "muhammadiksal52@gmail.com",
+    "password": "02190409521qW$",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
