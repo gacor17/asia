@@ -238,5 +238,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "viacntik945@gmail.com",
+    "password": "via127",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
