@@ -187,7 +187,7 @@
     "email": "medanlangkat5@gmail.com",
     "password": "medan1401",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "082164636965"
   }
 ]
