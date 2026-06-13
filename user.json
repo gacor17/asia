@@ -266,5 +266,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mbuhng70@gmail.com",
+    "password": "MBUTTGEDE",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
