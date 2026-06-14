@@ -294,5 +294,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085783616018"
+  },
+  {
+    "email": "bima84114@gmail.com",
+    "password": "BagusBima123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
