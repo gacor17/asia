@@ -322,5 +322,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ipansetiyawan0@gmail.com",
+    "password": "infinixgt20_ANDRO",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
