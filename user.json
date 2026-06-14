@@ -301,5 +301,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "erwin13589@gmail.com",
+    "password": "Vivov295g",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
