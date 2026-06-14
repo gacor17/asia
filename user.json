@@ -350,5 +350,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "epepa8778@gmail.com",
+    "password": "epepakun",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
