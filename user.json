@@ -406,5 +406,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "iammhsa30@gmail.com",
+    "password": "bungsumamah",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
