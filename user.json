@@ -413,5 +413,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "joerdion56@gmail.com",
+    "password": "Shabani@4id",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
