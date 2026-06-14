@@ -364,5 +364,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "rizwajancok@gmail.com",
+    "password": "#January2007",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
