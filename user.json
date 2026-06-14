@@ -371,5 +371,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085940392796"
+  },
+  {
+    "email": "lordmegabonz@gmail.com",
+    "password": "90toglory",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
