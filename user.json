@@ -357,5 +357,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "rije08035@gmail.com",
+    "password": "ri12je34",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
