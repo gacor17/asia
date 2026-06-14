@@ -308,5 +308,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mrizalullohirsyadulah@gmail.com",
+    "password": "AkunKu132109",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
