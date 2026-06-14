@@ -378,5 +378,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bahan6034@gmail.com",
+    "password": "sumurbor89",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
