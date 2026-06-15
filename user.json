@@ -518,5 +518,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "boedhycool@gmail.com",
+    "password": "Enemy378_",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
