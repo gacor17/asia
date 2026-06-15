@@ -474,7 +474,7 @@
     "email": "poco.fhonee@gmail.com",
     "password": "Satu2345",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "bank",
+    "payment_details": "901441232484"
   }
 ]
