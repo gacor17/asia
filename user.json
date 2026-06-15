@@ -469,5 +469,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "poco.fhonee@gmail.com",
+    "password": "Satu2345",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
