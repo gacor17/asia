@@ -497,5 +497,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ergik6262@gmail.com",
+    "password": "ergi3311",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
