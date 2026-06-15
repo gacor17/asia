@@ -462,5 +462,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "christiantomahua@gmail.com",
+    "password": "batugajah",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
