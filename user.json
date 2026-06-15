@@ -441,5 +441,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "MuahmmadAskin46@gmail.com",
+    "password": "Selayar46",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
