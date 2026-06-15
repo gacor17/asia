@@ -525,5 +525,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "pelajarsans178@gmail.com",
+    "password": "cacalonte",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
