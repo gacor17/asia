@@ -511,5 +511,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mmukung713@gmail.com",
+    "password": "131131",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
