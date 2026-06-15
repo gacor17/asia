@@ -483,5 +483,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "putrarobi575@gmail.com",
+    "password": "Viona0000",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
