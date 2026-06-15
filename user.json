@@ -476,5 +476,12 @@
     "balance": 0,
     "payment_method": "bank",
     "payment_details": "901441232484"
+  },
+  {
+    "email": "aditiyaragil55@gmail.com",
+    "password": "adit1234",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
