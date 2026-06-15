@@ -455,5 +455,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "082139554359"
+  },
+  {
+    "email": "ramdhan020715@gmail.com",
+    "password": "joko150489",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
