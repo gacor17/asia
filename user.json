@@ -448,5 +448,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "iwantzy079@gmail.com",
+    "password": "iwantulung22",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
