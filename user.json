@@ -427,5 +427,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "belvondoo@gmail.com",
+    "password": "kopi900",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
