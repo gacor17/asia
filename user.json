@@ -490,5 +490,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "zayarsan1981@gmail.com",
+    "password": "5eVJ7c6rHYksv2E",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
