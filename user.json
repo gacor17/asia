@@ -504,5 +504,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "adasaatnya70@gmail.com",
+    "password": "sandi1234",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
