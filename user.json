@@ -546,5 +546,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "magnumfilter280601@gmail.com",
+    "password": "Ayambangkok01",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
