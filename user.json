@@ -609,5 +609,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "dwiputraf91@gmail.com",
+    "password": "Fajar123@",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
