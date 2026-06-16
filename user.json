@@ -574,5 +574,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ahmadramadhani758@gmail.com",
+    "password": "7BK7REeqjsRQQ",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
