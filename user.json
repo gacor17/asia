@@ -539,5 +539,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kontalkantil410@gmail.com",
+    "password": "kontalkantil354",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
