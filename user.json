@@ -560,5 +560,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "naaa23058@gmail.com",
+    "password": "nisaimup",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
