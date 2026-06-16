@@ -602,5 +602,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mohamaddsabri1@gmail.com",
+    "password": "NIKO$6738",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
