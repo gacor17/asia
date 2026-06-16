@@ -553,5 +553,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "teguhprasetyo653@gmail.com",
+    "password": "201296TgS",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
