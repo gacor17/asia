@@ -595,5 +595,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bngkitmotor@gmail.com",
+    "password": "lupasandi",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
