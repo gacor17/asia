@@ -679,5 +679,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "088258455055"
+  },
+  {
+    "email": "wirataaryar@gmail.com",
+    "password": "(W1r4t4)-",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
