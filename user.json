@@ -686,5 +686,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "08218171947"
+  },
+  {
+    "email": "qiqibjm92@gmail.com",
+    "password": "Mcqiqi_92929292_0909",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
