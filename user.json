@@ -700,5 +700,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ajunmulet@gmail.com",
+    "password": "Viking997",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
