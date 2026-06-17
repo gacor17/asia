@@ -677,7 +677,7 @@
     "email": "saipulkyo01@gmail.com",
     "password": "Waluh123",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "088258455055"
   }
 ]
