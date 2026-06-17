@@ -693,5 +693,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bilyketombenanda@gmail.com",
+    "password": "operamini",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
