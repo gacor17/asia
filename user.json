@@ -707,5 +707,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "dimasadityaa30@gmail.com",
+    "password": "T031097",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
