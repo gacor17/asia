@@ -714,5 +714,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "dndi.prtm99@gmail.com",
+    "password": "deswara99",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
