@@ -651,5 +651,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "isnasange1991",
+    "password": "Isnae12",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
