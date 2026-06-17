@@ -665,5 +665,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ndahdamanik97@gmail.com",
+    "password": "baru123+-",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
