@@ -777,5 +777,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "abcdefayusak@gmail.com",
+    "password": "defa11",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
