@@ -763,5 +763,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "wisnurasya718@gmail.com",
+    "password": "Ciww021",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
