@@ -721,5 +721,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085867683905"
+  },
+  {
+    "email": "pitordebbarma40@gmail.com",
+    "password": "PITOR2006",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
