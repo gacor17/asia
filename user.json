@@ -770,5 +770,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "topikhidayat170320@gmail.com",
+    "password": "Taufik170320",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
