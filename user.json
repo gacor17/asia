@@ -756,5 +756,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "thomasadiputrs@gmail.com",
+    "password": "bintang10",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
