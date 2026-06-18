@@ -791,5 +791,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "jasimkhan741627@gmail.com",
+    "password": "741627",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
