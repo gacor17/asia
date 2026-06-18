@@ -742,5 +742,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "gunung0978@gmail.com",
+    "password": "yokoso000",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
