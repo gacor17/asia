@@ -728,5 +728,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "jagoantaufan@gmail.com",
+    "password": "987654321t",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
