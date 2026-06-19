@@ -854,5 +854,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "cello1239500@gmail.com",
+    "password": "Lahir@28112001",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
