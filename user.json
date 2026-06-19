@@ -861,5 +861,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kenosembarangan@gmail.com",
+    "password": "@H230420hery",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
