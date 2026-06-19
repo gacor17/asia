@@ -819,5 +819,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "megiaputra89@gmail.com",
+    "password": "aaaa1234",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
