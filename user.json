@@ -833,5 +833,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "Ovo/085697323630/Chintya Effendy"
+  },
+  {
+    "email": "monchumon41@gmail.com",
+    "password": "kemawi77",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
