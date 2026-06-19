@@ -882,5 +882,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kjhf5436@gmail.com",
+    "password": "094414",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
