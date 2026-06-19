@@ -868,5 +868,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "akunbaru12430@gmail.com",
+    "password": "Lupakatasandi00",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
