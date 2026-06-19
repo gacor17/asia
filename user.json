@@ -805,5 +805,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "nunualawiyah@gmail.com",
+    "password": "12345678",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
