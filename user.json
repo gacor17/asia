@@ -889,5 +889,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "nokn91665@gmail.com",
+    "password": "fon04042008",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
