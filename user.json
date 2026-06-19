@@ -875,5 +875,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "sakti30vip@gmail.com",
+    "password": "vvip1234",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
