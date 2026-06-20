@@ -931,5 +931,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "arinindya27@gmail.com",
+    "password": "wahyu1998",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
