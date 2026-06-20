@@ -945,5 +945,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "masgit1995@gmail.com",
+    "password": "B4345fgm",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
