@@ -924,5 +924,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "memegembul03@gmail.com",
+    "password": "Mikobayu12",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
