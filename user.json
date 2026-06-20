@@ -910,5 +910,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mha.arc21@gmail.com",
+    "password": "210077",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
