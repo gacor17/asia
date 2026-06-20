@@ -896,5 +896,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bayorberry1992@gmail.com",
+    "password": "celengan",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
