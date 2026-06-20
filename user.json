@@ -903,5 +903,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ppbibicubi@gmail.com",
+    "password": "pipopipop46810",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
