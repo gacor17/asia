@@ -966,5 +966,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "fuadnurrokhman@gmail.com"
+  },
+  {
+    "email": "azakbar4@gmail.com",
+    "password": "assel123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
