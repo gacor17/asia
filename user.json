@@ -980,5 +980,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "081563351169"
+  },
+  {
+    "email": "hoshimikan89@gmail.com",
+    "password": "AnimeLovers123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
