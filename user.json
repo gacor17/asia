@@ -964,7 +964,7 @@
     "email": "fuadnurrokhman@gmail.com",
     "password": "Indonesia@123",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "fuadnurrokhman@gmail.com"
   }
 ]
