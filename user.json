@@ -1029,5 +1029,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "m.avnsfynn@gmail.com",
+    "password": "mutia100111",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
