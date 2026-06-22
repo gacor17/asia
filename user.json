@@ -987,5 +987,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085890637657"
+  },
+  {
+    "email": "samuelfelicianovieira@gmail.com",
+    "password": "carioca123456789",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
