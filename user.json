@@ -1022,5 +1022,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "wiezbeni@gmail.com",
+    "password": "beni112233",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
