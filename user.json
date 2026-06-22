@@ -1008,5 +1008,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "hellenvan32@gmail.com",
+    "password": "17Agustus",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
