@@ -1015,5 +1015,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bellakania025@gmail.com",
+    "password": "Maulana133",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
