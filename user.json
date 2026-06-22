@@ -994,5 +994,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ozanlaodefaudzan@gmail.com",
+    "password": "Gerhana2922",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
