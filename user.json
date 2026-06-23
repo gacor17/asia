@@ -1127,5 +1127,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kncpamekasan6@gmail.com",
+    "password": "Hendra27",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
