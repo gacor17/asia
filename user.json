@@ -1036,5 +1036,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "phiseiyngsenaa@gmail.com",
+    "password": "#boonkill03@",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
