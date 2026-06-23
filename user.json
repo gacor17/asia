@@ -1078,5 +1078,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "izzikorea@gmail.com",
+    "password": "123456789@Kr",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
