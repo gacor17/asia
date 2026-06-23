@@ -1120,5 +1120,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "rjr146996@gmail.com",
+    "password": "David146996",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
