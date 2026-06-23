@@ -1085,5 +1085,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kontol123@gmail.com",
+    "password": "aldi333",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
