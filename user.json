@@ -1099,5 +1099,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": "moreza0885@gmail.com"
+  },
+  {
+    "email": "abdulgaming27272@gmail.com",
+    "password": "luthanbautai",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
