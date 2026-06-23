@@ -1106,5 +1106,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "abdulgaming27272@gmail.com"
+  },
+  {
+    "email": "tumbung991@gmail.com",
+    "password": "bangsat",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
