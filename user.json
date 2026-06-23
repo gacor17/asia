@@ -1071,5 +1071,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kayusayu8@gmail.com",
+    "password": "Kontol1",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
