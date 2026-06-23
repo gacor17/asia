@@ -1057,5 +1057,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "anjingcuk441@gmail.com",
+    "password": "fajrid_150",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
