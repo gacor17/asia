@@ -1113,5 +1113,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kang fajarfurnitureyogyakarta@gmail.com",
+    "password": "Mamad18552",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
