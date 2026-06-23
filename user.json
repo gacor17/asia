@@ -1092,5 +1092,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "moreza0885@gmail.com",
+    "password": "Warning99",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
