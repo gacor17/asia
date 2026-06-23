@@ -1134,5 +1134,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "dearia029@gmail.com",
+    "password": "arya0929",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
