@@ -1064,5 +1064,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "capretri@gmail.com",
+    "password": "Theblueade2012",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
