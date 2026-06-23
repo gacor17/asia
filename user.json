@@ -1050,5 +1050,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "lfajaaldafa@gmail.com",
+    "password": "fajrid_150",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
