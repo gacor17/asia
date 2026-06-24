@@ -1197,5 +1197,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "xaunnian@gmail.com",
+    "password": "hayapakabar",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
