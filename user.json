@@ -1183,5 +1183,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "dofudofu@gmail.com",
+    "password": "Ternate12345@",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
