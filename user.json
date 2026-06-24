@@ -1169,5 +1169,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "abug987779@gmail.com",
+    "password": "a12345",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
