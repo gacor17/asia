@@ -1190,5 +1190,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mahendrarajab1@gmail.com",
+    "password": "rajabmahend",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
