@@ -1176,5 +1176,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "083140763898"
+  },
+  {
+    "email": "kurniawanrasya036@gmail.com",
+    "password": "qwerty@123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
