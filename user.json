@@ -1211,5 +1211,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "napolly092@gmail.com",
+    "password": "Napolly092",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
