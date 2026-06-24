@@ -1148,5 +1148,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "agngkrnwn11@gmail.com",
+    "password": "agung kece22",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
