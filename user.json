@@ -1155,5 +1155,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "081568323455"
+  },
+  {
+    "email": "akustik aaaclanakustik@gmail.com",
+    "password": "rblpolo00",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
