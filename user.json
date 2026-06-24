@@ -1141,5 +1141,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085122164715"
+  },
+  {
+    "email": "baginewss@gmail.com",
+    "password": "farzan25072017",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
