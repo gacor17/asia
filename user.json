@@ -1204,5 +1204,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "angger2157@gmail.com",
+    "password": "arbElmaniA21",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
