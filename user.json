@@ -1174,7 +1174,7 @@
     "email": "abug987779@gmail.com",
     "password": "a12345",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "083140763898"
   }
 ]
