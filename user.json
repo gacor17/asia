@@ -1232,5 +1232,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "radiy6774@gmail.com",
+    "password": "radiyy6774",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
