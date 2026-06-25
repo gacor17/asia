@@ -1225,5 +1225,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085763598533"
+  },
+  {
+    "email": "azzammufidan4@gmail.com",
+    "password": "Azzam125",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
