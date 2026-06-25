@@ -1246,5 +1246,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "chikoarmando719@gmail.com",
+    "password": "eANMfu7y2gxVHZd",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
