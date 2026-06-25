@@ -1253,5 +1253,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "hendrixbadbone@gmail.com",
+    "password": "Aku211219#",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
