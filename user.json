@@ -1239,5 +1239,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "assassinonly2001@gmail.com",
+    "password": "playerramah1",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
