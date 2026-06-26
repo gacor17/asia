@@ -1316,5 +1316,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "daviidaviaulia@gmail.com",
+    "password": "212121",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
