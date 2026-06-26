@@ -1323,5 +1323,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "tiyo261107@gmail.com",
+    "password": "massyo26",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
