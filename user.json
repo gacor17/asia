@@ -1281,5 +1281,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "riyan.tkn@gmail.com",
+    "password": "8RxR3tnS9mccvp3",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
