@@ -1302,5 +1302,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "nelly46044364@gmail.com",
+    "password": "Lawkana12345#",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
