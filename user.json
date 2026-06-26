@@ -1274,5 +1274,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "codmtito74@gmail.com",
+    "password": "Pogiako",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
