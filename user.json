@@ -1267,5 +1267,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "enyhandayani402@gmail.com",
+    "password": "Rockandroll24",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
