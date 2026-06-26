@@ -1337,5 +1337,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ayam@gmail.com",
+    "password": "ayam1234",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
