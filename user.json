@@ -1309,5 +1309,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "deddysapitri@gmail.com",
+    "password": "Rumini16@",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
