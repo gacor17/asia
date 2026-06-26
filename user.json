@@ -1330,5 +1330,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "izzdith@gmail.com",
+    "password": "A01Wkwk1",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
