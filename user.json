@@ -1358,5 +1358,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "aasseepp0303@gmail.com",
+    "password": "asep0303",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
