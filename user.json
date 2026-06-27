@@ -1344,5 +1344,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "arbirizalk@gmail.com",
+    "password": "byanara19$",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
