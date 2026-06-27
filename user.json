@@ -1379,5 +1379,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ibadjombang05@gmail.com",
+    "password": "ibadmaulana11",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
