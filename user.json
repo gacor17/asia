@@ -1372,5 +1372,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085953702808"
+  },
+  {
+    "email": "saifalfarisy2004@gmail.com",
+    "password": "5ZQ3bdyHnPZGSPL",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
