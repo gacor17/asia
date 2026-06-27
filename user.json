@@ -1370,7 +1370,7 @@
     "email": "fmuh23615@gmail.com",
     "password": "Firmannos",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "085953702808"
   }
 ]
