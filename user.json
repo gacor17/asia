@@ -1365,5 +1365,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "fmuh23615@gmail.com",
+    "password": "Firmannos",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
