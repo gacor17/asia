@@ -1351,5 +1351,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "eg8902437@gmail.com",
+    "password": "enok78",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
