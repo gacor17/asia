@@ -1428,5 +1428,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "febbyagustian3005@gmail.com",
+    "password": "Febby1374",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
