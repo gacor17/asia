@@ -1421,5 +1421,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "082154370829"
+  },
+  {
+    "email": "helasadari@gmail.com",
+    "password": "sofyan11",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
