@@ -1400,5 +1400,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "keandias599@gmail.com",
+    "password": "kean5604h",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
