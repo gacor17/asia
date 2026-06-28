@@ -1414,5 +1414,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "trisakti677@gmail.com",
+    "password": "rahmanovita11",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
