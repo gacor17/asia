@@ -1435,5 +1435,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "083172475380"
+  },
+  {
+    "email": "zyenkt@gmail.com",
+    "password": "Sedanau123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
