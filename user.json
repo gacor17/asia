@@ -1442,5 +1442,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "vespaijo1234@gmail.com",
+    "password": "tida1234",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
