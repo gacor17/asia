@@ -1463,5 +1463,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "vdngamekung0630618915@gmail.com",
+    "password": "0630618915",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
