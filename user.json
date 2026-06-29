@@ -1449,5 +1449,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "jizen06@gmail.com",
+    "password": "123456qwerty",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
