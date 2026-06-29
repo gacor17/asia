@@ -1477,5 +1477,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "notmikazeee@gmail.com",
+    "password": "kodok99",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
