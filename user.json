@@ -1470,5 +1470,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "tomiyem45@gmail.com",
+    "password": "12345678",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
