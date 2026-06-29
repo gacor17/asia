@@ -1456,5 +1456,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "julkipli591@gmail.com",
+    "password": "angga123@#",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
