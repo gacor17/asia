@@ -1491,5 +1491,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ikyzevia@gmail.com",
+    "password": "Iky12345",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
