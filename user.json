@@ -1512,5 +1512,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "alun@gmail.com",
+    "password": "afshafsh",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
