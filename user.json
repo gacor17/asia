@@ -1519,5 +1519,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "blackykapoeng@gmail.com",
+    "password": "sera1231",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
