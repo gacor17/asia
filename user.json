@@ -1498,5 +1498,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "lidahbuaya710@gmail.com",
+    "password": "Qwerty12345",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
