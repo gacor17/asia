@@ -1596,5 +1596,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mohammadjuber095009@gmail.com",
+    "password": "mohammadjuber@123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
