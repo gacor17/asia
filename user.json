@@ -1582,5 +1582,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kurniadi.cdt@gmail.com",
+    "password": "Chodots17",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
