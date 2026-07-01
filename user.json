@@ -1561,5 +1561,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "aldisetanmerah02@gmail.com",
+    "password": "Sampoerna120198",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
