@@ -1554,5 +1554,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "faisallhhh7@gmail.com",
+    "password": "memek berem",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
