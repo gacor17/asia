@@ -1603,5 +1603,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "plontoppp@gmail.com",
+    "password": "nanda2005",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
