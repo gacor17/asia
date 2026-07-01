@@ -1575,5 +1575,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "pokokeana78@gmail.com",
+    "password": "kududadi",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
