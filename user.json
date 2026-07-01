@@ -1547,5 +1547,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "gilang170195@gmail.com",
+    "password": "gilang17",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
