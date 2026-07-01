@@ -1568,5 +1568,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bisabisa2306@gmail.com",
+    "password": "230608",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
