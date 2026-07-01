@@ -1533,5 +1533,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "stefanmanurung555@gmail.com",
+    "password": "987654321",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
