@@ -1624,5 +1624,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ekos10461@gmail.com",
+    "password": "diandian13juli",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
