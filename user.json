@@ -1610,5 +1610,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "proksindi@gmail.com",
+    "password": "Andibdrn",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
