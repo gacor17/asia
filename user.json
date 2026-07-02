@@ -1617,5 +1617,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "sempolwong3@gmail.com",
+    "password": "faris182003",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
