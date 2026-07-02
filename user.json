@@ -1631,5 +1631,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "jainatunumami@gmail.com",
+    "password": "qalesya@31",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
