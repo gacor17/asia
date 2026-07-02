@@ -1638,5 +1638,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "089685616111"
+  },
+  {
+    "email": "bagasartagood@gmail.com",
+    "password": "Bagasarta31",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
