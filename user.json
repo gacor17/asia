@@ -1694,5 +1694,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "nmoli0964@gmail.com",
+    "password": "082246",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
