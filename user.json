@@ -1680,5 +1680,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "082180071212"
+  },
+  {
+    "email": "adrianusroni8@gmail.com",
+    "password": "081021",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
