@@ -1666,5 +1666,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ahmedgmal.56.ai@gmail.com",
+    "password": "*Sultan01023815436*",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
