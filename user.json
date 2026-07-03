@@ -1659,5 +1659,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "0895321756804"
+  },
+  {
+    "email": "cmanpeg50@gmail.com",
+    "password": "mastermind23",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
