@@ -1701,5 +1701,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "riyasdeenktr@gmail.com",
+    "password": "haHH7avN6LRSwk2",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
