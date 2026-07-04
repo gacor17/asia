@@ -1757,5 +1757,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "081354369938"
+  },
+  {
+    "email": "daddi4664@gmail.com",
+    "password": "Warung321",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
