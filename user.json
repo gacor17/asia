@@ -1776,7 +1776,7 @@
     "email": "akounfake36@gmail.com",
     "password": "wahyu123",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "dana 083164219543"
   }
 ]
