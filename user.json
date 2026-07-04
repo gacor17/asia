@@ -1722,5 +1722,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mcmpropertysolution@gmail.com",
+    "password": "live1221",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
