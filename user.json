@@ -1729,5 +1729,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "reaggistho21@gmail.com",
+    "password": "vespa211209",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
