@@ -1736,5 +1736,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "minotminatos@gmail.com",
+    "password": "Jhunot098777",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
