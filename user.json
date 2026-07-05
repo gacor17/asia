@@ -1785,5 +1785,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kaivann455@gmail.com",
+    "password": "teunyaho",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
