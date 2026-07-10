@@ -1806,5 +1806,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "akece2939@gmail.com",
+    "password": "Anjay123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
