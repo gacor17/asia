@@ -1820,5 +1820,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "chefisef24@gmail.com",
+    "password": "Januari22",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
