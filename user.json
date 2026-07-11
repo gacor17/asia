@@ -1827,5 +1827,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "083125773084"
+  },
+  {
+    "email": "monkeydabby99@gmail.com",
+    "password": "MONKEY99",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
