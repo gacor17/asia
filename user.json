@@ -1834,5 +1834,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "allrightsx@gmail.com",
+    "password": "MarlonG12#$",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
