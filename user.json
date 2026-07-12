@@ -1841,5 +1841,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "elvasuka303@gmail.com",
+    "password": "Bombaya12.",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
