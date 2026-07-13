@@ -1848,5 +1848,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "fangkysugoooii144@gmail.com",
+    "password": "lanjutkan",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
