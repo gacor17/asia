@@ -1855,5 +1855,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "DERA436@GMAIL.COM",
+    "password": "Drm9800",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
