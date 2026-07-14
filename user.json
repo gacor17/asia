@@ -1869,5 +1869,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "pxrizz13@gmail.com",
+    "password": "haruskuat13",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
