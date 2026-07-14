@@ -1862,5 +1862,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "puteraaulia5@gmail.com",
+    "password": "Put3r42711",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
