@@ -1876,5 +1876,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "imawar879@gmail.com",
+    "password": "adem87",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
