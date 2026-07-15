@@ -1890,5 +1890,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "sukardimbah355@gmail.com",
+    "password": "Wildan2008",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
