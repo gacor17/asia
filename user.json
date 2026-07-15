@@ -1883,5 +1883,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "reynaldoalderossip@gmail.com",
+    "password": "reynaldo240205",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
