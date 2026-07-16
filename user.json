@@ -1904,5 +1904,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "Rastacore03gmail.com",
+    "password": "Rastacore092",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
