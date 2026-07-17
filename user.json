@@ -1911,5 +1911,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "orasepele78@gmail.com",
+    "password": "sepeleora78",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
