@@ -1932,5 +1932,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "088980503137"
+  },
+  {
+    "email": "ksam40645@gmail.com",
+    "password": "exsa123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
