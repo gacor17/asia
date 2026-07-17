@@ -1925,5 +1925,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "wahidludba2@gmail.com",
+    "password": "Wanusobo1_",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
