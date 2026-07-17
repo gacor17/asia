@@ -1939,5 +1939,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "khasgame136@gmail.com",
+    "password": "GameKhusus22",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
