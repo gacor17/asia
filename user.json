@@ -1918,5 +1918,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "yoondaktau398@gmail.com",
+    "password": "joenito123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
