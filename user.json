@@ -1967,5 +1967,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "yusriezal98@gmail.com",
+    "password": "yusrizal98",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
