@@ -1974,5 +1974,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ml.legend1331@gmail.com",
+    "password": "pally115533",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
