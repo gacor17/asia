@@ -1960,5 +1960,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "puyingmuying3@gmail.com",
+    "password": "7d3tji9JcFHG86h",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
