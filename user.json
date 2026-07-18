@@ -1953,5 +1953,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "jas248322@gmail.com",
+    "password": "jaskiding1",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
