@@ -2058,5 +2058,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "akunepep919283@gmail.com",
+    "password": "upinipin",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
