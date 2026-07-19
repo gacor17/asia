@@ -2044,5 +2044,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "arisganteng575@gmail.com",
+    "password": "aris1234567q",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
