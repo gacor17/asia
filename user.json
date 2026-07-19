@@ -2009,5 +2009,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "anggaresiden@gmail.com",
+    "password": "Pelerkuda",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
