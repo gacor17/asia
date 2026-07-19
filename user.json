@@ -2023,5 +2023,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bayuuekaafvck99@gmail.com",
+    "password": "Masbay19",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
