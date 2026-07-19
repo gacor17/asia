@@ -2030,5 +2030,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "njirnjir",
+    "password": "anjirbanget",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
