@@ -2072,5 +2072,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "82131456295"
+  },
+  {
+    "email": "donghuaaa2009@gmail.com",
+    "password": "bebegek27",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
