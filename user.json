@@ -2079,5 +2079,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "renggasinto72@gmail.com",
+    "password": "sinyo121",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
