@@ -2093,5 +2093,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "anestiacantik@gmail.com",
+    "password": "anestia123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
