@@ -2100,5 +2100,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mardinrosyid@gmail.com",
+    "password": "ocidSdt56",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
