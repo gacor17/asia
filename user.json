@@ -2107,5 +2107,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bimayoanita@gmail.com",
+    "password": "Bima8989",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
