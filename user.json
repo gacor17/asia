@@ -2142,5 +2142,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bobisandewa@gmail.com",
+    "password": "bakolsempak",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
