@@ -2163,5 +2163,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ardiansyah0707021@gmail.com",
+    "password": "cr085648",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
