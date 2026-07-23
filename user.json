@@ -2135,5 +2135,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kovenx1990@gmail.com",
+    "password": "fade2white",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
