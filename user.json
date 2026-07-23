@@ -2170,5 +2170,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "arul13032005@gmail.com",
+    "password": "rubah99",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
