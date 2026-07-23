@@ -2128,5 +2128,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bagassinam24@gmail.com",
+    "password": "Bagas11#",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
