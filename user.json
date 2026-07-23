@@ -2149,5 +2149,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "lolo@gmail.com",
+    "password": "HelloBandung21!",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
