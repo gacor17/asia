@@ -2156,5 +2156,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ardiyannew@gmail.com",
+    "password": "Kambing1%",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
