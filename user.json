@@ -2184,5 +2184,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "wogepoke@gmail.com",
+    "password": "Serlyn",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
