@@ -2191,5 +2191,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "cakjoo99@gmail.com",
+    "password": "kakek9999",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
