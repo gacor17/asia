@@ -2212,5 +2212,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085654898469"
+  },
+  {
+    "email": "padiell79@gmail.com",
+    "password": "Padil2334",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
