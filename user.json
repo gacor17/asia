@@ -2198,5 +2198,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "sayangaku26@gmail.com",
+    "password": "@kalibaru1",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
