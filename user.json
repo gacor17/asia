@@ -2233,5 +2233,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "088224109775"
+  },
+  {
+    "email": "briannasution08@gmail.com",
+    "password": "Keknya123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
