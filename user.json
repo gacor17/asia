@@ -2247,5 +2247,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "mahendrayogapratama11@gmail.com",
+    "password": "hendra123.",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
