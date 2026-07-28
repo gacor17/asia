@@ -2226,5 +2226,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "089512569840"
+  },
+  {
+    "email": "jaten1403@gmail.com",
+    "password": "ardii000",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
