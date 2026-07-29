@@ -2268,5 +2268,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "opeck0@gmail.com",
+    "password": "Manda231",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
