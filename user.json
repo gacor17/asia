@@ -2254,5 +2254,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "simarmatahero@gmail.com",
+    "password": "simarmatahero2024@",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
