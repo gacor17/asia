@@ -2261,5 +2261,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bibitprasetio6@gmail.com",
+    "password": "dancok",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
