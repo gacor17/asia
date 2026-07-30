@@ -2282,5 +2282,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "081269359608"
+  },
+  {
+    "email": "Almansoori123@hotil.com",
+    "password": "reqmiz-xymqy9-nYsruf",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
