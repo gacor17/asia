@@ -2324,5 +2324,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "akbartanjungperak1@gmail.com",
+    "password": "asekasek",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
