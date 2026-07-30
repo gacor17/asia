@@ -2289,5 +2289,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "awedabdallah112@icloud.com",
+    "password": "qosTyx-5jorni-papbum",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
