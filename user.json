@@ -2331,5 +2331,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "087728145946"
+  },
+  {
+    "email": "defiandrias@gmail.com",
+    "password": "jancokkk",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
