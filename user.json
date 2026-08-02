@@ -2338,5 +2338,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "sb8949212@gmail.com",
+    "password": "F4j4r97",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
