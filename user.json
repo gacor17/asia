@@ -2359,5 +2359,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "apriantolucas9@gmail.com",
+    "password": "pelalawan",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
