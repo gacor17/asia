@@ -2380,5 +2380,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "muhazharii038@gmail.com",
+    "password": "Astaga12",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
