@@ -2401,5 +2401,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "083840011121"
+  },
+  {
+    "email": "dompane36@gmail.com",
+    "password": "Menjangan23",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
