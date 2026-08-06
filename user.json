@@ -2387,5 +2387,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "087752089280 Muhammad Azhari Tulusang"
+  },
+  {
+    "email": "kw6551652@gmail.com",
+    "password": "gaktau123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
