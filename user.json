@@ -2415,5 +2415,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "itilbadeg94@gmail.com",
+    "password": "Quin1.",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
