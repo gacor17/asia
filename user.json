@@ -2422,5 +2422,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "d.m.d.ngsn.d.nf.s.n.b.t@gmail.com",
+    "password": "Asd@@12345()&",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
