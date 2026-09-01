@@ -2443,5 +2443,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kontolodon@gmail.com",
+    "password": "Aryaputra17",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
