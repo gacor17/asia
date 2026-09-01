@@ -2436,5 +2436,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "luayam27@gmail.com",
+    "password": "muhammad iqbal 2010",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
