@@ -2457,5 +2457,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "wildan2052009@gmail.com",
+    "password": "amjaii_2002",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
