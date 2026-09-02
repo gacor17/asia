@@ -2450,5 +2450,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "dafithardiyanto825@gmail.com",
+    "password": "inQPt2bTqM3u8hg",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
