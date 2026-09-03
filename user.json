@@ -2471,5 +2471,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "doodstreambest@gmail.com",
+    "password": "Azkal123#",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
