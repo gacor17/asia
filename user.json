@@ -2464,5 +2464,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "083186231248"
+  },
+  {
+    "email": "meong1523@gmail.com",
+    "password": "Jordi1234567",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
