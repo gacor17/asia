@@ -2478,5 +2478,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "boycelo091@gmail.com",
+    "password": "Manukgede1!",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
