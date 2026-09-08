@@ -2492,5 +2492,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "geveng587@gmail.com",
+    "password": "Abc12345",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
