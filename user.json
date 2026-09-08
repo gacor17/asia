@@ -2485,5 +2485,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "scoopyhitamyw@gmail.com",
+    "password": "123456789",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
