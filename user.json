@@ -2499,5 +2499,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "pypuji08@gmail.com",
+    "password": "nokiasenter22",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
