@@ -2518,7 +2518,7 @@
     "email": "akafebrianto9@gmail.com",
     "password": "Dhen122",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "081949401125"
   }
 ]
