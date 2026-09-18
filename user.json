@@ -2534,5 +2534,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "noelouano5529@gmail.com",
+    "password": "Loverboy@24",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
