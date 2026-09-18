@@ -2541,5 +2541,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "zey",
+    "password": "bangzey",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
