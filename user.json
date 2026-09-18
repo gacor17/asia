@@ -2520,5 +2520,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "081949401125"
+  },
+  {
+    "email": "andrikevin08@gmail.com",
+    "password": "Gacor123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
