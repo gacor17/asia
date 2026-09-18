@@ -2527,5 +2527,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "081380122433"
+  },
+  {
+    "email": "dodikkurniawan984@gmail.com",
+    "password": "gudanggaram",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
