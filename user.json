@@ -2548,5 +2548,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "satriabagas49877@gmail.com",
+    "password": "surabayacacaayda123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
