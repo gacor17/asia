@@ -2583,5 +2583,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "iyanfico5@gmail.com",
+    "password": "masfico13",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
