@@ -2590,5 +2590,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "dyondawankhai@gmail.com",
+    "password": "pisces21",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
