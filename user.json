@@ -2569,5 +2569,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "089504554007"
+  },
+  {
+    "email": "silahkaailah91@gmail.com",
+    "password": "Sutarnugroho1988$",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
