@@ -2576,5 +2576,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "silahkasilah91@gmail.com",
+    "password": "Sutarnugroho1988$",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
