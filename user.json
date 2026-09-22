@@ -2611,5 +2611,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "ronaldoduante@gmail.com",
+    "password": "Aliciamae13_@",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
