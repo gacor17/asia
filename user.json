@@ -2604,5 +2604,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bagusbagas123098@gmail.com",
+    "password": "bagus123",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
