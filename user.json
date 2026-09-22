@@ -2618,5 +2618,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "dwiwidiyasta06@gmail.com",
+    "password": "Madedwi0206",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
