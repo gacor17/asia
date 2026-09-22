@@ -2632,5 +2632,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "085701770949"
+  },
+  {
+    "email": "donielbegah@gmail.com",
+    "password": "gdhl2806",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
