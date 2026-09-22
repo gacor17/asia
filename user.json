@@ -2630,7 +2630,7 @@
     "email": "alexanderbagussetiawan@gmail.com",
     "password": "Poinlah123",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "dana",
+    "payment_details": "085701770949"
   }
 ]
