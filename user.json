@@ -2667,5 +2667,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "edirenghea@icloud.com",
+    "password": "Vasilevas33",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
