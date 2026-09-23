@@ -2653,5 +2653,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "rimarcod210@gmail.com",
+    "password": "moledak90",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
