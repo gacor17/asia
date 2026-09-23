@@ -2658,7 +2658,7 @@
     "email": "rimarcod210@gmail.com",
     "password": "moledak90",
     "balance": 0,
-    "payment_method": "paypal",
-    "payment_details": ""
+    "payment_method": "bank",
+    "payment_details": "rimarcod210@gmail.com/Dana/081295164459/Kusmara"
   }
 ]
