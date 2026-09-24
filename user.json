@@ -2688,5 +2688,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "08811603634"
+  },
+  {
+    "email": "dwi2757@icloud com",
+    "password": "#Rumahqu002",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
