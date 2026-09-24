@@ -2674,5 +2674,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "arsippakmunawar@gmail.com",
+    "password": "Saraz009",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
