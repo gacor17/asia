@@ -2702,5 +2702,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "sakadingee@gmail.com",
+    "password": "SakadingSakadung26",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
