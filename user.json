@@ -2709,5 +2709,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "melin031095@gmail.com",
+    "password": "Sheren02",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
