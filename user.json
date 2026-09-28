@@ -2716,5 +2716,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "sandigunawan846@gmail.com",
+    "password": "Sandy1900",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
