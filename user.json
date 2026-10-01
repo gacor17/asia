@@ -2723,5 +2723,12 @@
     "balance": 0,
     "payment_method": "dana",
     "payment_details": "083848293334"
+  },
+  {
+    "email": "thirdkaneki@gmail.com",
+    "password": "123tytyt",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
