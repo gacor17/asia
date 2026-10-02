@@ -2730,5 +2730,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "daniwidiantoro15@gmail.com",
+    "password": "Danidani12",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
