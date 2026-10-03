@@ -2744,5 +2744,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "xxdavidrodriguez@gmail.com",
+    "password": "Davidrodriguez",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
