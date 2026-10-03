@@ -2758,5 +2758,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "muhammadzaskiagotik93@gmail.com",
+    "password": "EHdzXpcVFP3VHiX",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
