@@ -2765,5 +2765,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bagasrachmadi.30@gmail.com",
+    "password": "Sastrowardoyo30",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
