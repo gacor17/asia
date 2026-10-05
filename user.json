@@ -2772,5 +2772,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "vomnfe@confhs234.com",
+    "password": "assass",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
