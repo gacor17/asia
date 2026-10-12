@@ -2779,5 +2779,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "nadif4882@gmail.com",
+    "password": "@Nadzif24",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
