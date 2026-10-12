@@ -2793,5 +2793,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "alfaqykeren@gmail.com",
+    "password": "pendekar_2005",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
