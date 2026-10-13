@@ -2800,5 +2800,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "bonbon110900@gmail.com",
+    "password": "bonbon11",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
