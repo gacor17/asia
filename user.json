@@ -2821,5 +2821,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "soumajaux@gmail.com",
+    "password": "Jaux2004&",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
