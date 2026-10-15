@@ -2863,5 +2863,12 @@
     "balance": 0,
     "payment_method": "paypal",
     "payment_details": ""
+  },
+  {
+    "email": "kabinten109@gmail.com",
+    "password": "12345678",
+    "balance": 0,
+    "payment_method": "paypal",
+    "payment_details": ""
   }
 ]
